@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kevin Octavianus Santoso — Software Developer</title>
+<meta name="description" content="Portfolio of Kevin Octavianus Santoso, a software developer building web applications and interactive experiences.">
+<meta property="og:title" content="Kevin Octavianus Santoso — Software Developer">
+<meta property="og:description" content="Web applications, interactive experiences and creative technology.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#B8FF3B;--neon:#75FF9B;--blue:#386BFF;--cyan:#52E5FF;--navy:#10172A;--off:#F7F8F2;--black:#111;--ink:#F7F8F2;--bg:#10172A;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+h1,h2,h3{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.wrap{max-width:1200px;margin:auto;padding:0 20px}
+section{padding:110px 0;position:relative}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:var(--lime);color:#111;padding:8px;z-index:99}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 20px 12px;background:rgba(16,23,42,.9);backdrop-filter:blur(8px);border-bottom:2px solid var(--lime)}
+.logo{font-family:Anton;font-size:1.5rem;color:var(--lime);text-decoration:none}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+nav a.l{display:block;padding:6px 14px;border-radius:99px;text-decoration:none;font-weight:500;font-size:.9rem}
+nav a.l.on{background:var(--lime);color:#111}
+nav a.l:hover:not(.on){background:rgba(255,255,255,.12)}
+.burger{display:none;background:var(--lime);border:0;border-radius:8px;padding:8px 12px;font:700 .9rem "Space Grotesk";color:#111;cursor:pointer}
+@media(max-width:760px){.burger{display:block}nav ul{position:fixed;inset:60px 0 auto 0;flex-direction:column;background:var(--navy);padding:16px 20px 24px;border-bottom:2px solid var(--lime);transform:translateY(-130%);transition:transform .4s}
+nav ul.open{transform:none}nav a.l{font-size:1.4rem;padding:12px 14px}}
+#home{min-height:100svh;padding:0;display:grid;place-items:center;overflow:hidden;background:var(--navy)}
+.room{position:absolute;inset:0;width:100%;height:100%}
+.hero-in{position:relative;text-align:center;padding:110px 20px 80px;max-width:1000px}
+.hi{font-weight:700;letter-spacing:.2em;color:var(--cyan);font-size:.9rem}
+.hero-in h1{margin:0;font-size:clamp(2.2rem,min(5.6vw,9.5vh),6.5rem);line-height:.95;letter-spacing:.01em;display:flex;flex-direction:column;align-items:center}
+.hero-in h1 .c{display:inline-block;transform:translateY(110%);animation:up .8s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--i)*.035s)}
+.mask{overflow:hidden;display:block}
+@keyframes up{to{transform:none}}
+.sub{font-family:Anton;font-size:clamp(1.3rem,min(3.4vw,5.5vh),2.8rem);text-transform:uppercase;margin:0;line-height:1;letter-spacing:.02em}
+.intro{max-width:34em;margin:0}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font:700 1rem "Space Grotesk";text-transform:uppercase;letter-spacing:.04em;padding:16px 28px;border-radius:99px;border:3px solid var(--lime);background:var(--lime);color:#111;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn.alt{background:var(--navy);color:var(--lime)}
+.btn:hover{background:var(--cyan);border-color:var(--cyan);color:#111}
+.avail{display:inline-flex;gap:8px;align-items:center;background:#000a;border:1px solid var(--neon);border-radius:99px;padding:4px 14px;font-size:.85rem;margin-bottom:18px}
+.avail i{width:9px;height:9px;border-radius:50%;background:var(--neon);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #75ff9b99}100%{box-shadow:0 0 0 9px #75ff9b00}}
+.scroll{position:absolute;bottom:14px;left:50%;translate:-50% 0;font-size:.75rem;letter-spacing:.2em;color:#111;font-weight:700;text-decoration:none;animation:bob 1.8s infinite}
+@keyframes bob{50%{translate:-50% 8px}}
+.shape{position:absolute;pointer-events:none;will-change:transform}
+.mascot{position:absolute;right:max(2vw,10px);bottom:60px;width:clamp(100px,15vw,190px);cursor:pointer;z-index:2;background:none;border:0;padding:0}
+.mascot svg{width:100%;overflow:visible;animation:float 3.5s ease-in-out infinite}
+.mascot.jump svg{animation:jump .6s}
+@keyframes float{50%{transform:translateY(-12px) rotate(3deg)}}
+@keyframes jump{40%{transform:translateY(-60px) scale(.95,1.1)}}
+.bubble{position:absolute;right:70%;top:-14px;background:var(--off);color:#111;font-weight:700;padding:8px 12px;border-radius:14px 14px 2px 14px;white-space:nowrap;opacity:0;transition:opacity .3s;font-size:.85rem}
+.mascot.say .bubble{opacity:1}
+.marq{background:var(--lime);color:#111;overflow:hidden;white-space:nowrap;border-block:3px solid #111;padding:10px 0}
+.marq div{display:inline-block;font-family:Anton;font-size:2rem;text-transform:uppercase;animation:mq 28s linear infinite}
+.marq span{margin:0 18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+h2{font-size:clamp(3rem,11vw,8rem);color:var(--lime);margin-bottom:40px}
+h2 em{font-style:normal;color:var(--cyan)}
+#about{background:var(--blue)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--navy);border-radius:28px 28px 28px 4px;padding:26px;border:2px solid var(--lime)}
+.card:nth-child(2){border-radius:4px 28px 28px 28px;border-color:var(--cyan)}
+.card h3{font-size:2rem;color:var(--neon);margin-bottom:10px}
+.lead{font-size:clamp(1.3rem,3vw,2rem);max-width:820px;margin:0 0 30px;font-weight:500}
+.lead b{background:var(--lime);color:#111;padding:0 6px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.proj{display:flex;flex-direction:column;grid-column:span var(--s,3);background:var(--navy);border:3px solid var(--off);border-radius:36px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;padding:0;font:inherit;transition:transform .15s,border-color .3s}
+.proj.narrow{border-radius:4px 36px 36px 36px}
+.proj:hover{border-color:var(--lime)}
+.cover{aspect-ratio:16/9;overflow:hidden;position:relative}
+.proj .cover{aspect-ratio:auto;flex:1 1 auto;min-height:clamp(200px,24vw,340px)}
+.cover svg,.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.proj:hover .cover svg,.proj:hover .cover img{transform:scale(1.08)}
+.ph{position:absolute;right:12px;top:12px;background:#111;color:var(--lime);font-size:.7rem;padding:3px 10px;border-radius:99px}
+.pbody{padding:20px 24px 26px}
+.pbody h3{font-size:clamp(1.8rem,4vw,3rem);transition:transform .4s,color .3s}
+.proj:hover h3{transform:translateX(10px);color:var(--lime)}
+.meta{display:flex;justify-content:space-between;color:var(--cyan);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
+.tags li{border:1.5px solid var(--neon);border-radius:99px;padding:2px 12px;font-size:.78rem}
+.cta{display:inline-block;margin-top:14px;font-weight:700;color:var(--lime)}
+@media(max-width:800px){.proj,.proj:nth-child(n){grid-column:1/-1}}
+dialog{width:min(1000px,100%);max-width:100%;height:100dvh;max-height:100dvh;margin:0 0 0 auto;border:0;padding:0;background:var(--off);color:#111;overflow:auto}
+dialog::backdrop{background:#000a}
+dialog[open]{animation:slide .5s cubic-bezier(.2,.9,.2,1)}
+@keyframes slide{from{transform:translateX(100%)}}
+.cs{padding:30px clamp(20px,5vw,60px) 60px}
+.cs h2{color:var(--blue);font-size:clamp(3rem,9vw,6rem);margin:20px 0}
+.cs h3{font-size:1.8rem;color:var(--blue);margin:28px 0 6px}
+.cs ul{padding-left:20px}.cs ul.tags{padding:0}
+.close{position:sticky;top:0;float:right;background:#111;color:var(--lime);border:0;border-radius:99px;padding:10px 20px;font:700 1rem "Space Grotesk";cursor:pointer;z-index:2}
+.cs .tags li{border-color:var(--blue)}
+.cs .btn{border-color:#111;background:#111;color:var(--lime);margin:6px 6px 0 0}
+.cs .btn[aria-disabled=true]{opacity:.5;cursor:not-allowed;background:transparent;color:#111}
+.cs .cover{border-radius:24px;border:3px solid #111}
+#skills{background:var(--lime);color:#111}#skills h2{color:#111}#skills h2 em{color:var(--blue)}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{background:#111;color:var(--lime);border:0;border-radius:99px;padding:12px 24px;font:700 1.1rem "Space Grotesk";cursor:pointer;transition:transform .25s,opacity .8s}
+.chip:nth-child(3n){background:var(--blue);color:#fff}.chip:nth-child(3n+1){background:var(--navy)}
+.chip:hover,.chip:focus-visible{transform:translateY(-6px) rotate(-3deg)}
+#tip{margin-top:26px;min-height:3.2em;font-size:1.3rem;font-weight:500}
+.tl{position:relative;margin-left:14px;padding-left:34px;border-left:4px solid var(--cyan)}
+.tl article{position:relative;margin-bottom:36px;background:var(--off);color:#111;border-radius:24px;padding:22px 26px}
+.tl article::before{content:"";position:absolute;left:-49px;top:26px;width:20px;height:20px;border-radius:50%;background:var(--lime);border:4px solid var(--navy)}
+.tl h3{font-size:1.9rem;color:var(--blue)}.tl small{font-weight:700;color:#555}
+#contact{background:var(--blue);overflow:hidden}
+#contact h2{font-size:clamp(3rem,10vw,7.5rem)}
+.cwrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.cwrap{grid-template-columns:1fr}}
+.links a{display:block;font-family:Anton;font-size:2.2rem;text-transform:uppercase;text-decoration:none;border-bottom:3px solid var(--lime);padding:6px 0;transition:padding .3s,color .3s}
+.links a:hover{padding-left:16px;color:var(--lime)}
+form{display:grid;gap:14px}
+label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+input,textarea{width:100%;background:var(--navy);color:var(--off);border:3px solid var(--navy);border-radius:16px;padding:14px;font:inherit;margin-top:4px}
+input:focus,textarea:focus{border-color:var(--lime);outline:0}
+#fmsg{min-height:1.5em;font-weight:700}
+footer{background:#111;padding:26px 20px;text-align:center;font-size:.85rem}
+.cur{position:fixed;left:0;top:0;width:34px;height:34px;border:2px solid var(--lime);border-radius:50%;pointer-events:none;z-index:50;mix-blend-mode:difference;transition:width .2s,height .2s;display:none}
+@media(hover:hover) and (pointer:fine){.cur{display:block}}
+#bar{position:fixed;top:0;left:0;right:0;height:4px;background:var(--cyan);transform-origin:0 50%;transform:scaleX(0);z-index:30}
+.cards .rv:nth-child(odd){transform:translate(-70px,30px) rotate(-4deg)}.cards .rv:nth-child(even){transform:translate(70px,30px) rotate(4deg)}.cards .rv.in{transform:none}
+.tl .rv{transform:translateX(-60px)}.tl .rv.in{transform:none}
+.chip.rv{transform:scale(.4) rotate(-12deg)}.chip.rv.in{transform:none}
+.proj.rv{opacity:0;transform:none;translate:0 70px;transition:opacity .8s,translate .9s cubic-bezier(.2,.9,.2,1),transform .15s,border-color .3s}.proj.rv.in{opacity:1;translate:none}
+.proj.rv .cover svg,.proj.rv .cover img{scale:1.4;transition:scale 1.3s cubic-bezier(.2,.9,.2,1),transform .6s}.proj.rv.in .cover svg,.proj.rv.in .cover img{scale:1.15}
+.cover svg,.cover img{scale:1.15}
+.tl::after{content:"";position:absolute;left:-4px;top:0;width:4px;height:var(--tp,0%);background:var(--lime)}
+.abt{display:grid;grid-template-columns:1fr 1.4fr;gap:30px;align-items:center;margin-bottom:30px}.abt .lead{margin:0}
+@media(max-width:800px){.abt{grid-template-columns:1fr}}
+.me{margin:0;max-width:640px;width:100%;justify-self:center;perspective:900px}
+.mewrap{position:relative;animation:bob2 4s ease-in-out infinite;transition:transform .2s;transform-style:preserve-3d}
+.me img{display:block;width:100%;height:auto;border-radius:32px 32px 32px 6px;border:3px solid var(--lime);box-shadow:10px 10px 0 #111}
+.mb{position:absolute;font:700 .85rem "Space Grotesk";background:var(--lime);color:#111;border:2px solid #111;border-radius:99px;padding:4px 14px;animation:fl 3s ease-in-out infinite}
+.b1{left:-14px;top:12%}.b2{right:-10px;top:42%;animation-delay:-1s;background:var(--cyan)}.b3{left:6%;bottom:-14px;animation-delay:-2s}
+.meb{position:absolute;right:6%;top:-16px;background:var(--off);color:#111;border:3px solid #111;border-radius:18px 18px 18px 2px;padding:8px 14px;font:700 .9rem "Space Grotesk";cursor:pointer;transition:transform .2s}.meb:hover{transform:scale(1.06) rotate(-2deg)}
+@media(prefers-reduced-motion:reduce){.mewrap{transform:none!important}}
+.me .bob{animation:bob2 3s ease-in-out infinite}@keyframes bob2{50%{transform:translateY(5px)}}
+.me .wave{transform-origin:178px 210px;animation:wave 1.6s ease-in-out infinite}@keyframes wave{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(16deg)}}
+.me .bl{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.me .fl{animation:fl 3s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-10px)}}
+.fc{display:block;min-height:270px;perspective:900px;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.fc .in2{position:relative;display:block;height:100%;min-height:270px;transition:transform .7s cubic-bezier(.2,.9,.2,1);transform-style:preserve-3d}
+.fc.on .in2{transform:rotateY(180deg)}.fc:not(.on):hover .in2,.fc:not(.on):focus-visible .in2{transform:rotateY(-10deg) translateY(-6px)}
+.fc .ft,.fc .bk{position:absolute;inset:0;display:block;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--navy);border:2px solid var(--lime);border-radius:28px 28px 28px 4px;padding:24px;overflow:auto}
+.fc .bk{transform:rotateY(180deg);background:var(--lime);color:#111;border-color:#111}
+.fc .h{display:block;font-family:Anton;font-size:2rem;text-transform:uppercase;color:var(--neon);margin-bottom:10px;line-height:1}.fc .bk .h{color:#111}.fc .p{display:block}
+.fc small{position:absolute;bottom:14px;right:20px;color:var(--cyan);font-weight:700}
+.me .sway{transform-origin:64px 216px;animation:sway 3.4s ease-in-out infinite}@keyframes sway{50%{transform:rotate(4deg)}}
+.filt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.fb{border:3px solid #111;background:transparent;color:#111;border-radius:99px;padding:6px 18px;font:700 .9rem "Space Grotesk";cursor:pointer}.fb[aria-pressed=true]{background:#111;color:var(--lime)}
+.chip[aria-pressed=true]{box-shadow:0 0 0 4px #fff,0 0 0 7px #111}
+.chip.rv.in.off{opacity:.15!important;transform:scale(.7)!important;pointer-events:none}
+#tip{background:#111;color:var(--off);border-radius:24px 24px 24px 4px;padding:20px 24px;max-width:680px;min-height:6em;font-size:1.1rem}
+#tip.pop{animation:pop .4s}@keyframes pop{from{transform:scale(.94);opacity:.4}}
+#tip .tn{font-family:Anton;font-size:2.4rem;text-transform:uppercase;color:var(--lime);margin-right:12px}
+#tip .tc{background:var(--cyan);color:#111;border-radius:99px;padding:2px 12px;font-size:.8rem;font-weight:700}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero-in h1 .c{transform:none}.rv,.cards .rv,.tl .rv,.chip.rv{opacity:1!important;transform:none!important}.proj.rv{opacity:1!important;translate:none!important}}
+.cover img{object-position:top}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.shot{border:3px solid #111;border-radius:16px;overflow:hidden;padding:0;background:none;cursor:zoom-in}.shot img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;transition:transform .4s}.shot:hover img{transform:scale(1.06)}
+#lb{max-width:100%;width:100%;margin:0;background:#000e;padding:16px}#lb[open]{display:block}#lb img{display:block;max-width:100%;margin:40px auto 0;border-radius:12px}
+.hero-in{display:flex;flex-direction:column;align-items:center;gap:clamp(12px,2.2vh,24px);width:min(100%,60vw);max-width:none;padding:96px 0 70px}
+.hero-in>*{margin:0}
+.ln{display:block;overflow:hidden;padding:.02em .05em .07em;text-wrap:balance}
+.l1{color:var(--lime)}.l2{color:var(--blue);font-size:1.5em;line-height:.9}
+.w{display:inline-block;white-space:nowrap}
+.hero-in .avail{text-transform:uppercase;letter-spacing:.05em;font-weight:700;background:var(--navy);border:2px solid var(--lime)}
+.hero-in .btns{flex-wrap:nowrap}
+.mascot{width:clamp(90px,11vw,170px);right:max(1.5vw,10px);bottom:15vh}
+.room.m{display:none}
+@media(max-width:640px){.room.d{display:none}.room.m{display:block}.hero-in{width:84vw;padding:90px 0 60px}.shape{display:none}.mascot{bottom:10px;width:78px}.hero-in h1{font-size:clamp(2.2rem,12.5vw,4rem)}.hero-in .btn{padding:14px 18px;font-size:.85rem}.hero-in .btns{gap:8px}}
+.me{max-width:600px}.mewrap{aspect-ratio:1}
+.deco{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.me img.cut{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:84%;height:auto;border:0;border-radius:0;box-shadow:none;filter:drop-shadow(0 20px 22px rgba(0,0,0,.35))}
+.spin{transform-box:fill-box;transform-origin:center;animation:wob 6s ease-in-out infinite}@keyframes wob{50%{transform:rotate(20deg)}}
+.fl2{animation:fl 3.5s ease-in-out infinite}
+.me .b1{left:0;top:18%}.me .b3{left:6%;bottom:14%}.me .meb{right:auto;left:2%;top:2%}
+.abt{margin-bottom:-60px}.cards{position:relative;z-index:2}
+.proj .cover svg,.proj .cover img{position:absolute;inset:0}
+@media(max-width:800px){.proj .cover{min-height:0;aspect-ratio:16/9;flex:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="cur" aria-hidden="true"></div>
+<nav aria-label="Main">
+  <a class="logo" href="#home" id="logo">KOS</a>
+  <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+  <ul id="menu">
+    <li><a class="l" href="#home">Home</a></li><li><a class="l" href="#about">About</a></li><li><a class="l" href="#projects">Projects</a></li><li><a class="l" href="#experience">Experience</a></li><li><a class="l" href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<main id="main">
+<section id="home">
+  <svg class="room d" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <rect width="100" height="100" fill="#10172A"/>
+    <polygon points="0,0 100,0 84,19 16,19" fill="#3FD8FF"/>
+    <polygon points="0,0 16,19 16,81 0,100" fill="#2557FF"/>
+    <polygon points="100,0 84,19 84,81 100,100" fill="#1d6b3a"/>
+    <path d="M16 81Q50 85.5 84 81L100 100H0Z" fill="#B8FF3B"/>
+  </svg>
+  <svg class="room m" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <rect width="100" height="100" fill="#10172A"/>
+    <polygon points="0,0 100,0 94,10 6,10" fill="#3FD8FF"/>
+    <polygon points="0,0 6,10 6,87 0,100" fill="#2557FF"/>
+    <polygon points="100,0 94,10 94,87 100,100" fill="#1d6b3a"/>
+    <path d="M6 87Q50 90 94 87L100 100H0Z" fill="#B8FF3B"/>
+  </svg>
+  <div class="shape" data-p="30" style="left:8%;top:30%"><svg width="70" height="70" viewBox="0 0 70 70" aria-hidden="true"><polygon points="35,3 67,35 35,67 3,35" fill="#75FF9B" stroke="#111" stroke-width="3"/></svg></div>
+  <div class="shape" data-p="-40" style="right:4%;top:24%"><svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true"><path d="M10 50C0 20 40 0 62 20s10 50-20 52S18 70 10 50Z" fill="#B8FF3B" stroke="#111" stroke-width="3"/></svg></div>
+  <div class="shape" data-p="20" style="left:18%;bottom:20%"><svg width="60" height="60" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="26" fill="#386BFF" stroke="#111" stroke-width="3"/></svg></div>
+  <div class="hero-in">
+    <div class="avail"><i></i><span id="avail"></span></div>
+    <h1 aria-label="Kevin Octavianus Santoso"><span class="ln l1" id="nm1" aria-hidden="true"></span><span class="ln l2" id="nm2" aria-hidden="true"></span></h1>
+    <p class="sub">I build digital experiences.</p>
+    <p class="intro" id="intro"></p>
+    <div class="btns"><a class="btn mag" href="#projects">Explore my work</a><a class="btn alt mag" href="#contact">Let’s talk</a></div>
+  </div>
+  <button class="mascot" aria-label="Say hi to the mascot" data-mascot><span class="bubble">Hi there!</span></button>
+  <a class="scroll" href="#about" aria-label="Scroll down">SCROLL ↓</a>
+</section>
+<div class="marq" aria-hidden="true"><div id="mq1"></div></div>
+<section id="about"><div class="wrap">
+  <h2 class="rv">About<br><em>me</em></h2>
+  <div class="abt"><p class="lead rv" id="about-t"></p>
+  <figure class="me rv" id="me"><div class="mewrap"><svg class="deco" viewBox="0 0 600 600" aria-hidden="true"><path d="M110 360C60 200 200 70 370 90s220 130 200 290-120 200-270 180S140 480 110 360Z" fill="#B8FF3B"/><ellipse cx="300" cy="330" rx="290" ry="115" transform="rotate(-20 300 330)" fill="none" stroke="#52E5FF" stroke-width="12"/><g class="spin"><path d="M60 80l38 38M98 80 60 118" stroke="#B8FF3B" stroke-width="16" stroke-linecap="round"/></g><polygon class="fl2" points="545 130 575 160 545 190 515 160" fill="#52E5FF" stroke="#111" stroke-width="5"/><circle cx="22" cy="260" r="18" fill="#52E5FF" stroke="#111" stroke-width="5"/><circle cx="566" cy="450" r="20" fill="#B8FF3B" stroke="#111" stroke-width="5"/></svg><img class="cut" src="images/Profile/KevinCutout.webp" alt="Kevin Octavianus Santoso" width="897" height="841"><span class="mb b1">PHP</span><span class="mb b2">SQL</span><span class="mb b3">JS</span><button class="meb" type="button">Hi! Click me</button></div></figure></div>
+  <div class="cards" id="cards"></div>
+</div></section>
+<section id="projects"><div class="wrap">
+  <h2 class="rv">Selected<br><em>work</em></h2>
+  <div class="grid" id="grid"></div>
+</div></section>
+<section id="skills"><div class="wrap">
+  <h2 class="rv">Tech<br><em>toolbox</em></h2>
+  <div class="filt" id="filt" role="group" aria-label="Filter technologies"></div>
+  <div class="chips" id="chips"></div>
+  <p id="tip" aria-live="polite">Hover or tap a technology.</p>
+</div></section>
+<section id="experience"><div class="wrap">
+  <h2 class="rv">Journey</h2>
+  <div class="tl" id="tl"></div>
+</div></section>
+<section id="contact"><div class="wrap">
+  <h2 class="rv">Let’s build<br>something cool.</h2>
+  <div class="cwrap">
+    <div class="links" id="links"></div>
+    <form id="form" novalidate>
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <div id="fmsg" role="status"></div>
+    </form>
+  </div>
+</div></section>
+</main>
+<footer>© <span id="yr"></span> Kevin Octavianus Santoso</footer>
+<dialog id="dlg" aria-label="Project case study"></dialog>
+<dialog id="lb" aria-label="Screenshot preview"><button class="close" aria-label="Close preview" onclick="this.parentNode.close()">Close ✕</button><img alt=""></dialog>
+<script>
+/* ===== EDIT YOUR CONTENT HERE ===== */
+const CONFIG={
+  logo:"KOS",
+  availability:"Open to opportunities",
+  intro:"Software developer creating web applications, interactive experiences, and creative technology.",
+  about:"I’m <b>Kevin Octavianus Santoso</b>, an Informatics student from Tangerang with hands-on experience in web application development and IT support. I build internal business systems for inventory, purchasing and quality control, and I love learning new technology.",
+  email:"kevinoctavian710@gmail.com",
+  socials:[{label:"LinkedIn",url:"https://linkedin.com/in/kevin-octavian-710gbuall"},{label:"GitHub",url:"https://github.com/kevoctavian"}],
+  cards:[
+    {t:"Role",d:"Software Developer / Web Application Developer.",m:"Web Application Developer and IT Support at PT Javinci Berkat Kreatif Sentosa, Jakarta (Sep 2025 – Aug 2026)."},
+    {t:"Interests",d:"Web development, software engineering, UI/UX, interactive web experiences, creative technology.",m:"Web Development · Software Engineering · UI/UX · Interactive Web Experiences · Creative Technology"},
+    {t:"Education",d:"Bachelor of Informatics, Bunda Mulia University. GPA 3.68.",m:"Coursework: Database Systems, Software Engineering, Web Programming, Data Structures & Algorithms, Human Computer Interaction (UI/UX)."},
+    {t:"Certification",d:"CertNexus GenAIBIZ Credential (GAZ-210): generative AI in business and responsible AI practices.",m:"Covers AI-driven productivity and automation, responsible AI practices, and integrating AI into business processes and decisions."}],
+  skills:[
+    ["PHP","Server-side language for internal business applications."],["Python","General-purpose language for scripting and ML."],["JavaScript","Interactive front-ends and tooling."],["SQL","Querying and managing relational data."],["HTML","Semantic markup."],["CSS","Layout and styling."],["Bootstrap","Responsive UI framework."],["jQuery","DOM scripting and AJAX helpers."],["AJAX","Dynamic filtering and product autocomplete."],["MySQL","Relational database."],["SQL Server","Relational database."],["PostgreSQL","Relational database."],["Git & GitHub","Version control and collaboration."],["IT Support","IT service management, hardware, software and network troubleshooting."],["UI/UX","Studied Human Computer Interaction."]],
+  projects:[
+    {title:"Rice Leaf Disease Classification",cat:"Machine Learning",year:"2026",c:["#386BFF","#B8FF3B"],shots:["images/RiceLeaf/Home.png","images/RiceLeaf/Upload.png","images/RiceLeaf/History.png","images/RiceLeaf/DiseaseInfo.png","images/RiceLeaf/AdminDashboard.png","images/RiceLeaf/ModelReport.png","images/RiceLeaf/ConfusionMatrix.png"],
+     desc:"A web app that classifies rice leaf diseases from photos using a Random Forest model. My final thesis project.",stack:["Python","Django","scikit-learn","OpenCV","PostgreSQL","Bootstrap 5"],
+     overview:"A web-based system that identifies rice leaf diseases from an uploaded or camera photo. It extracts 92 image features (GLCM, color and LBP), classifies the leaf as Bacterial Leaf Blight, Rice Blast, Tungro or Healthy, and shows a confidence score. The model reaches over 92% test accuracy.",problem:"Rice leaf diseases such as Bacterial Leaf Blight, Rice Blast and Tungro look very similar, so they are hard to tell apart by eye. The goal was to build a web-based classifier with Random Forest and measure how well it works using a confusion matrix.",role:"This is my final thesis project. I built the whole system: the machine learning pipeline and the Django web application, for both users and admins.",
+     process:"I followed the Waterfall method. The images are preprocessed, 92 features are extracted, the data is balanced with augmentation and BorderlineSMOTE, and a Random Forest is trained with GridSearchCV on the Rice Leaf and Crop Disease dataset (Mendeley Data). The app was then tested with black box testing.",features:["Upload a photo or use the device camera","Layered validation that rejects images that are not rice leaves","Classifies 4 classes with a confidence score","Diagnosis history with filters","Disease information pages","User statistics","Admin panel with model metrics, confusion matrix and ROC curve"],github:"https://github.com/kevoctavian/ProgramRLD",demo:""},
+    {title:"Inventory Management System",cat:"Web Application",year:"2025\u20132026",c:["#10172A","#52E5FF"],shots:["images/javinciInventory/MinMax.png","images/javinciInventory/SummaryMutasiBarang.png","images/javinciInventory/BillOfMaterialMenu.png","images/javinciInventory/SPKProduksiMenu.png","images/javinciInventory/PrinttPDFPreview.png"],
+     desc:"Internal inventory system with Stock Min/Max reports, mutation summaries, Bill of Material and production orders.",stack:["JavaScript","AJAX","SQL"],
+     overview:"An internal web application for monitoring inventory, built at PT Javinci Berkat Kreatif Sentosa.",problem:"Faster inventory monitoring and better operational decisions.",role:"Web Application Developer: built the Stock Min/Max reports and inventory mutation summaries.",process:"[Add: requirements gathering, development and testing steps.]",features:["Stock Min/Max reports","Inventory mutation summaries","Bill of Material","SPK Produksi (production orders)","Printable PDF preview"],github:"",demo:""},
+    {title:"Quality Control Management",cat:"Web Application",year:"2025\u20132026",c:["#75FF9B","#386BFF"],shots:["images/javinciInventory/QualityControlmenu.png"],
+     desc:"QC modules for raw material inspection and tracking, with full CRUD.",stack:["JavaScript","AJAX","SQL"],
+     overview:"A web module for raw-material inspection and management, with PDF shipment receipt upload and validation.",problem:"Improve data accuracy and reporting efficiency in quality control.",role:"Web Application Developer: built the QC modules end to end.",process:"[Add: requirements gathering, development and testing steps.]",features:["Complete CRUD for raw material inspection","PDF shipment receipt upload and validation","Reporting"],github:"",demo:""},
+    {title:"Purchase Order Management",cat:"Web Application",year:"2025\u20132026",c:["#386BFF","#52E5FF"],shots:["images/javinciInventory/PurchaseOrderMenu.png"],
+     desc:"PO management integrated with goods receipt workflows and approvals.",stack:["JavaScript","AJAX","SQL"],
+     overview:"A purchase order system integrated with goods receipt workflows.",problem:"Reduce manual work in purchasing and receiving.",role:"Web Application Developer: developed and enhanced the PO module.",process:"[Add: requirements gathering, development and testing steps.]",features:["Approval workflow","Automated calculations","AJAX product autocomplete","Dynamic filtering"],github:"",demo:""},
+    {title:"UI/UX E-Commerce",cat:"UI/UX Design",year:"2023",c:["#386BFF","#B8FF3B"],shots:["images/Ecommerce/HomePage.png","images/Ecommerce/ecm4.png","images/Ecommerce/ecm5.png","images/Ecommerce/ecm6.png","images/Ecommerce/CartPage.png","images/Ecommerce/ecm7.png","images/Ecommerce/LoginPage.png"],
+     desc:"An e-commerce UI/UX design made in Figma for a Human Computer Interaction course.",stack:["Figma"],
+     overview:"BORCELLE is an e-commerce concept that focuses only on the UI/UX, designed in Figma for the Human Computer Interaction course. The screens cover login, home, categories, product detail, cart, checkout and payment.",problem:"This was a course project for Human Computer Interaction. The goal was to make an e-commerce project that focuses only on the UI/UX, using Figma.",role:"I contributed to creating all of the menus and pages in this project.",process:"I designed each page in Figma, from login/sign up and the home page to category, item detail, cart, checkout and payment.",features:["Login / Sign Up page","Home page with promos and products","Category selected page","Item selected page","Cart page","Checkout page","Payment page"],github:"",demo:""},
+    {title:"Rasa Nusantara",cat:"Website",year:"2024",c:["#75FF9B","#10172A"],shots:["images/RasaNusantara/HomePage.png","images/RasaNusantara/CategoryPage.png","images/RasaNusantara/FoodSelectionPage.png","images/RasaNusantara/FoodResepPage.png","images/RasaNusantara/FormDiskusiPage.png","images/RasaNusantara/ContactPage.png","images/RasaNusantara/LoginPage.png"],
+     desc:"A food information website built with HTML and CSS for a Search Engine Optimization course.",stack:["HTML","CSS"],
+     overview:"RasaNusantara is a food information website about Indonesian cuisine, where visitors can find restaurants, culinary menus, recipes, cooking video tutorials and a discussion forum.",problem:"This was a course project for Search Engine Optimization (SEO). The goal was to make a website about food using only HTML and CSS.",role:"I contributed to creating all of the menus and pages in this project.",process:"I built each page using HTML and CSS only: login, home, restaurant list and details, culinary menu, recipes, forum and contact.",features:["Login page","Home with restaurant search","Restaurant list and detail pages","Culinary menu categories","Recipe pages","Video cooking tutorials","Forum","Contact page with map"],github:"",demo:""}],
+  experience:[
+    {org:"PT Javinci Berkat Kreatif Sentosa · Jakarta",title:"Web Application Developer",period:"Sep 2025 – Aug 2026",points:["Built and maintained internal apps for inventory, purchasing, quality control and reporting.","Developed Stock Min/Max reports, inventory mutation summaries and QC modules with full CRUD.","Implemented PDF shipment receipt upload and validation, and PO management with approval workflows.","Worked with cross-functional teams on requirements, testing and performance."]},
+    {org:"PT Javinci Berkat Kreatif Sentosa · Jakarta",title:"IT Support",period:"Sep 2025 – Aug 2026",points:["Resolved hardware, software and network issues for end-users.","Handled software installation, hardware configuration and system maintenance.","Managed IT service requests following IT Service Management practices."]},
+    {org:"Genius Bimbel · Tangerang",title:"Academic Tutor",period:"Oct 2024 – May 2025",points:["Guided about 10 students, mainly in Mathematics at elementary and junior high level.","Designed interactive learning materials and tracked progress through regular assessments."]}]
+};
+/* ===== ENGINE ===== */
+CONFIG.projects.forEach(p=>{p.shots=p.shots||[];p.img=p.img||p.shots[0]||""});
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fine=matchMedia("(hover:hover) and (pointer:fine)").matches,calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+$("#logo").textContent=CONFIG.logo;$("#avail").textContent=CONFIG.availability;$("#intro").textContent=CONFIG.intro;$("#about-t").innerHTML=CONFIG.about;
+$("#yr").textContent=new Date().getFullYear();
+{let i=0;const mk=t=>t.split(" ").map(w=>`<span class="w">${[...w].map(c=>`<span class="c" style="--i:${i++}">${c}</span>`).join("")}</span>`).join(" ");$("#nm1").innerHTML=mk("KEVIN OCTAVIANUS");$("#nm2").innerHTML=mk("SANTOSO")}
+$("#mq1").innerHTML=CONFIG.skills.map(s=>`<span>${esc(s[0])} ✦</span>`).join("").repeat(2);
+$("#cards").innerHTML=CONFIG.cards.map(c=>`<button class="fc rv" aria-pressed="false" aria-label="${esc(c.t)}: tap to flip"><span class="in2"><span class="ft"><span class="h">${esc(c.t)}</span><span class="p">${esc(c.d)}</span><small>Tap to flip ↻</small></span><span class="bk"><span class="h">${esc(c.t)}</span><span class="p">${esc(c.m||"")}</span></span></span></button>`).join("");
+$$(".fc").forEach(b=>b.onclick=()=>b.setAttribute("aria-pressed",b.classList.toggle("on")));
+const CAT={PHP:"Languages",Python:"Languages",JavaScript:"Languages",SQL:"Languages",HTML:"Web",CSS:"Web",Bootstrap:"Web",jQuery:"Web",AJAX:"Web",MySQL:"Databases","SQL Server":"Databases",PostgreSQL:"Databases","Git & GitHub":"Tools","IT Support":"IT Support","UI/UX":"Design"};
+const USED={AJAX:"Dynamic filtering and product autocomplete in the PO module.","IT Support":"End-user support plus hardware, software and network troubleshooting.",SQL:"Data management and reporting in internal systems."};
+$("#chips").innerHTML=CONFIG.skills.map(s=>`<button class="chip rv" aria-pressed="false" data-n="${esc(s[0])}" data-c="${esc(CAT[s[0]]||"Other")}" data-d="${esc(s[1])}">${esc(s[0])}</button>`).join("");
+const tip=$("#tip"),show=b=>{const n=b.dataset.n;tip.innerHTML=`<span class="tn">${esc(n)}</span><span class="tc">${esc(b.dataset.c)}</span><br>${esc(b.dataset.d)}${USED[n]?`<br><b>Used for:</b> ${esc(USED[n])}`:""}`;tip.classList.remove("pop");void tip.offsetWidth;tip.classList.add("pop")};
+$$(".chip").forEach(b=>{b.onmouseenter=()=>show(b);b.onfocus=()=>show(b);b.onclick=()=>{$$(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));show(b)}});
+const cats=["All",...new Set(CONFIG.skills.map(s=>CAT[s[0]]||"Other"))];
+$("#filt").innerHTML=cats.map((c,i)=>`<button class="fb" aria-pressed="${i===0}">${esc(c)}</button>`).join("");
+$$(".fb").forEach(f=>f.onclick=()=>{$$(".fb").forEach(x=>x.setAttribute("aria-pressed",x===f));$$(".chip").forEach(c=>c.classList.toggle("off",f.textContent!=="All"&&c.dataset.c!==f.textContent))});
+$("#tl").innerHTML=CONFIG.experience.map(x=>`<article class="rv"><small>${esc(x.period)}</small><h3>${esc(x.title)}</h3><b>${esc(x.org)}</b><ul>${x.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></article>`).join("");
+const real=u=>u&&u.trim();
+$("#links").innerHTML=`<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=${encodeURIComponent(CONFIG.email)}" target="_blank" rel="noopener">Email ↗</a><p style="margin:6px 0 18px;font-weight:500">${esc(CONFIG.email)}</p>`+CONFIG.socials.filter(s=>real(s.url)).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join("");
+const art=p=>p.img?`<img src="${esc(p.img)}" alt="${esc(p.title)} cover" loading="lazy">`:`<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="225" fill="${p.c[0]}"/><circle cx="300" cy="70" r="80" fill="${p.c[1]}"/><path d="M0 225 120 110l90 115z" fill="${p.c[1]}" opacity=".7"/><rect x="40" y="30" width="110" height="14" rx="7" fill="#fff" opacity=".8"/></svg>`;
+const ph=p=>p.img?"":`<span class="ph">Cover placeholder</span>`;
+const tags=p=>`<ul class="tags">${p.stack.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
+$("#grid").innerHTML=CONFIG.projects.map((p,i)=>`<button class="proj rv" data-i="${i}" aria-label="Open case study: ${esc(p.title)}"><div class="cover">${art(p)}${ph(p)}</div><div class="pbody"><div class="meta"><span>${esc(p.cat)}</span><span>${esc(p.year)}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>${tags(p)}<span class="cta">View case study →</span></div></button>`).join("");
+{const P=[[4,2],[3,3],[2,4]],ps=$$(".proj");let i=0,r=0;while(i<ps.length){const sp=ps.length-i>=2?P[r%3]:[6];sp.forEach((c,k)=>{ps[i+k].style.setProperty("--s",c);ps[i+k].classList.toggle("narrow",c===2)});i+=sp.length;r++}}
+const dlg=$("#dlg");
+const link=(u,t)=>real(u)?`<a class="btn" href="${esc(u)}" target="_blank" rel="noopener">${t}</a>`:"";
+$$(".proj").forEach(b=>b.onclick=()=>{const p=CONFIG.projects[b.dataset.i];
+dlg.innerHTML=`<div class="cs"><button class="close" aria-label="Close">Close ✕</button><div class="meta" style="color:#386BFF"><span>${esc(p.cat)}</span><span>${esc(p.year)}</span></div><h2>${esc(p.title)}</h2><div class="cover">${art(p)}${ph(p)}</div><h3>Overview</h3><p>${esc(p.overview)}</p><h3>Problem &amp; objectives</h3><p>${esc(p.problem)}</p><h3>My role</h3><p>${esc(p.role)}</p><h3>Process</h3><p>${esc(p.process)}</p><h3>Technologies</h3>${tags(p)}${p.shots.length?`<h3>Screenshots</h3><div class="shots">${p.shots.map((u,i)=>`<button class="shot" data-s="${esc(u)}" aria-label="Enlarge screenshot ${i+1} of ${esc(p.title)}"><img src="${esc(u)}" alt="${esc(p.title)} screenshot ${i+1}" loading="lazy"></button>`).join("")}</div>`:""}<h3>Key features</h3><ul>${p.features.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>${p.github||p.demo?`<h3>Links</h3>${link(p.github,"GitHub")}${link(p.demo,"Live demo")}`:""}</div>`;
+dlg.showModal();dlg.scrollTop=0;$(".close",dlg).onclick=()=>dlg.close();$$(".shot",dlg).forEach(x=>x.onclick=()=>{const im=$("#lb img");im.src=x.dataset.s;im.alt=$("img",x).alt;$("#lb").showModal()})});
+$("#lb").onclick=e=>{if(e.target.tagName!=="BUTTON")e.currentTarget.close()};
+dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+if(fine&&!calm)$$(".proj").forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`};c.onmouseleave=()=>c.style.transform=""});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+$$(".rv").forEach(e=>io.observe(e));
+const showVisible=()=>$$(".rv:not(.in)").forEach(e=>{const r=e.getBoundingClientRect();if(r.top<innerHeight*.92&&r.bottom>0){e.classList.add("in");io.unobserve(e)}});
+addEventListener("scroll",showVisible,{passive:true});addEventListener("load",showVisible);setTimeout(showVisible,300);
+const links=$$("nav a.l"),so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>{const on=a.getAttribute("href")==="#"+e.target.id;a.classList.toggle("on",on);on?a.setAttribute("aria-current","true"):a.removeAttribute("aria-current")})}),{rootMargin:"-45% 0px -50% 0px"});
+$$("main section").forEach(s=>so.observe(s));
+const burger=$(".burger"),menu=$("#menu");
+burger.onclick=()=>{const o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o)};
+links.forEach(a=>a.addEventListener("click",()=>{menu.classList.remove("open");burger.setAttribute("aria-expanded",false)}));
+const SVG=`<svg viewBox="0 0 200 200" aria-hidden="true"><path d="M100 14c52 0 86 38 86 90 0 40-30 82-86 82S14 144 14 104C14 52 48 14 100 14Z" fill="#75FF9B" stroke="#111" stroke-width="6"/><path d="M60 14 50-8M140 14l10-22" stroke="#111" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="-12" r="8" fill="#386BFF" stroke="#111" stroke-width="4"/><circle cx="150" cy="-12" r="8" fill="#386BFF" stroke="#111" stroke-width="4"/><circle cx="70" cy="90" r="26" fill="#fff" stroke="#111" stroke-width="5"/><circle class="pu" cx="70" cy="90" r="11" fill="#111"/><circle cx="132" cy="90" r="26" fill="#fff" stroke="#111" stroke-width="5"/><circle class="pu" cx="132" cy="90" r="11" fill="#111"/><path d="M72 138q30 26 60 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/></svg>`;
+$$("[data-mascot]").forEach(m=>{m.insertAdjacentHTML("afterbegin",SVG);const lines=["Hi there!","Check the projects!","Let’s build!","Boop!"];let n=0;
+m.onclick=()=>{m.classList.remove("jump");void m.offsetWidth;m.classList.add("jump");$(".bubble",m).textContent=lines[n++%lines.length];m.classList.add("say");setTimeout(()=>m.classList.remove("say"),1800)}});
+const pupils=$$(".pu"),cur=$(".cur");
+addEventListener("pointermove",e=>{
+ if(!calm)pupils.forEach(p=>{const g=p.getBoundingClientRect(),a=Math.atan2(e.clientY-(g.top+g.height/2),e.clientX-(g.left+g.width/2));const r=+(p.dataset.r||11);p.style.transform=`translate(${Math.cos(a)*r}px,${Math.sin(a)*r}px)`});
+ if(fine&&!calm){cur.style.transform=`translate(${e.clientX-17}px,${e.clientY-17}px)`;
+  $$(".shape").forEach(s=>{const k=+s.dataset.p/1000;s.style.transform=`translate(${(e.clientX-innerWidth/2)*k}px,${(e.clientY-innerHeight/2)*k}px)`})}
+},{passive:true});
+$$("a,button").forEach(e=>{e.addEventListener("mouseenter",()=>{cur.style.width=cur.style.height="56px"});e.addEventListener("mouseleave",()=>{cur.style.width=cur.style.height="34px"})});
+if(fine&&!calm)$$(".mag").forEach(b=>{b.onmousemove=e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`};b.onmouseleave=()=>b.style.transform=""});
+/* About illustration */
+{const w=$(".mewrap"),f=$("#me"),b=$(".meb"),L=["Hi! Click me","Good things take time","Code. Design. Build. Improve.","Let’s build something cool!"];let k=0;
+b.onclick=()=>{k=(k+1)%L.length;b.textContent=L[k]};
+if(fine&&!calm){f.onmousemove=e=>{const r=f.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;w.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg)`};f.onmouseleave=()=>w.style.transform=""}}
+/* Scroll animations */
+const bar=document.createElement("div");bar.id="bar";document.body.append(bar);
+$$(".rv").forEach(e=>{const i=[...e.parentNode.children].indexOf(e);e.style.transitionDelay=(i%4)*.1+"s";e.addEventListener("transitionend",()=>e.style.transitionDelay="",{once:true})});
+if(!calm){const hin=$(".hero-in"),room=$(".room"),mas=$("#home .mascot"),h2s=$$("h2"),covers=$$("#grid .cover svg,#grid .cover img"),tl=$(".tl");let tick=false;
+const upd=()=>{tick=false;const y=scrollY,H=innerHeight;
+ bar.style.transform=`scaleX(${y/Math.max(1,document.documentElement.scrollHeight-H)})`;
+ if(y<H*1.2){hin.style.translate=`0 ${y*.25}px`;hin.style.opacity=Math.max(0,1-y/(H*.8));room.style.scale=1+y*.0004;mas.style.translate=`0 ${y*.35}px`}
+ h2s.forEach(h=>{const r=h.getBoundingClientRect();if(r.bottom<0||r.top>H)return;h.style.translate=`${(r.top+r.height/2-H/2)*-.08}px 0`});
+ covers.forEach(c=>{const r=c.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>H)return;c.style.translate=`0 ${(r.top+r.height/2-H/2)*-.06}px`});
+ const t=tl.getBoundingClientRect();tl.style.setProperty("--tp",Math.min(100,Math.max(0,(H*.6-t.top)/t.height*100))+"%")};
+addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd()}
+/* Form opens the visitor's email app; no fake success message */
+$("#form").onsubmit=e=>{e.preventDefault();const f=e.target,m=$("#fmsg");
+ if(!f.name.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value)||!f.message.value.trim()){m.textContent="Please fill in name, a valid email and a message.";m.style.color="#FFB4B4";return}
+ if(CONFIG.email.includes("example.com")){m.textContent="Set your real email in CONFIG.email first.";m.style.color="#FFB4B4";return}
+ const su=encodeURIComponent("Portfolio message from "+f.name.value),bd=encodeURIComponent(f.message.value+"\n\n— "+f.name.value+" ("+f.email.value+")"),to=encodeURIComponent(CONFIG.email);
+ const g="https://mail.google.com/mail/?view=cm&fs=1&to="+to+"&su="+su+"&body="+bd,mt="mailto:"+CONFIG.email+"?subject="+su+"&body="+bd;
+ const w=window.open(g,"_blank");if(w)w.opener=null;
+ m.style.color="var(--lime)";m.textContent="Gmail should open in a new tab with your message ready. Press Send there to deliver it. If nothing opened:";
+ [["Open Gmail",g,"_blank"],["Use my email app",mt,"_self"]].forEach(([t,h,tg])=>{const a=document.createElement("a");a.textContent=t;a.href=h;a.target=tg;a.rel="noopener";a.style.cssText="color:#fff;margin-left:10px;text-decoration:underline";m.append(a)})};
+</script>
+</body>
+</html>
