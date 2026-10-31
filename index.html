@@ -3,189 +3,316 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://kevoctavianporto.netlify.app/">
 <title>Kevin Octavianus Santoso — Software Developer</title>
 <meta name="description" content="Portfolio of Kevin Octavianus Santoso, a software developer building web applications and interactive experiences.">
 <meta property="og:title" content="Kevin Octavianus Santoso — Software Developer">
 <meta property="og:description" content="Web applications, interactive experiences and creative technology.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://kevoctavianporto.netlify.app/">
+<meta property="og:image" content="https://kevoctavianporto.netlify.app/images/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kevin Octavianus Santoso, Software Developer — I build digital experiences.">
+<meta property="og:site_name" content="Kevin Octavianus Santoso Portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kevin Octavianus Santoso — Software Developer">
+<meta name="twitter:description" content="Web applications, interactive experiences and creative technology.">
+<meta name="twitter:image" content="https://kevoctavianporto.netlify.app/images/og-preview.png">
+<meta name="twitter:image:alt" content="Kevin Octavianus Santoso, Software Developer — I build digital experiences.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--lime:#B8FF3B;--neon:#75FF9B;--blue:#386BFF;--cyan:#52E5FF;--navy:#10172A;--off:#F7F8F2;--black:#111;--ink:#F7F8F2;--bg:#10172A;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#0D1117;--bg-sec:#10172A;--bg-mid:#131D30;--card:#161F30;--border:#2A364F;--lime:#B8FF3B;--neon:#75FF9B;--cyan:#52E5FF;--ink:#F8FAFC;--muted:#94A3B8;--navy:#10172A;--off:#F8FAFC;--black:#0B0F17;--blue:#386BFF;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
 h1,h2,h3{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;margin:0}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
 .wrap{max-width:1200px;margin:auto;padding:0 20px}
 section{padding:110px 0;position:relative}
 .skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:var(--lime);color:#111;padding:8px;z-index:99}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 20px 12px;background:rgba(16,23,42,.9);backdrop-filter:blur(8px);border-bottom:2px solid var(--lime)}
-.logo{font-family:Anton;font-size:1.5rem;color:var(--lime);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 20px 12px;background:rgba(13,17,23,.92);backdrop-filter:blur(10px);border-bottom:2px solid var(--border)}
+.logo{font-family:Anton;font-size:1.5rem;color:var(--lime);text-decoration:none;letter-spacing:.02em}
 nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-nav a.l{display:block;padding:6px 14px;border-radius:99px;text-decoration:none;font-weight:500;font-size:.9rem}
+nav a.l{display:block;padding:8px 16px;border-radius:99px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--muted);transition:color .2s,background .2s,border-color .2s}
 nav a.l.on{background:var(--lime);color:#111}
-nav a.l:hover:not(.on){background:rgba(255,255,255,.12)}
-.burger{display:none;background:var(--lime);border:0;border-radius:8px;padding:8px 12px;font:700 .9rem "Space Grotesk";color:#111;cursor:pointer}
-@media(max-width:760px){.burger{display:block}nav ul{position:fixed;inset:60px 0 auto 0;flex-direction:column;background:var(--navy);padding:16px 20px 24px;border-bottom:2px solid var(--lime);transform:translateY(-130%);transition:transform .4s}
-nav ul.open{transform:none}nav a.l{font-size:1.4rem;padding:12px 14px}}
-#home{min-height:100svh;padding:0;display:grid;place-items:center;overflow:hidden;background:var(--navy)}
+nav a.l:hover:not(.on){background:rgba(255,255,255,.08);color:var(--ink)}
+.burger{display:none;background:var(--card);border:2px solid var(--border);border-radius:99px;padding:8px 16px;font:700 .85rem "Space Grotesk";color:var(--lime);cursor:pointer;min-height:44px;min-width:44px;align-items:center;justify-content:center;transition:background .2s,color .2s,border-color .2s}
+.burger[aria-expanded="true"]{background:var(--lime);color:#111;border-color:var(--lime)}
+@media(max-width:760px){.burger{display:inline-flex}nav ul{position:fixed;inset:60px 0 auto 0;flex-direction:column;background:rgba(16,23,42,.98);backdrop-filter:blur(16px);padding:18px 20px 24px;border-bottom:2px solid var(--border);box-shadow:0 24px 48px rgba(0,0,0,.6);transform:translateY(-130%);transition:transform .35s cubic-bezier(.2,.9,.2,1)}
+nav ul.open{transform:none}nav a.l{font-size:1.15rem;padding:14px 16px;border-radius:12px;display:flex;align-items:center;justify-content:space-between}nav a.l.on{background:var(--lime);color:#111}nav a.l:hover:not(.on){background:rgba(255,255,255,.06);color:var(--ink)}}
+#home{min-height:100svh;padding:0;display:grid;place-items:center;overflow:hidden;background:var(--bg);position:relative}
 .room{position:absolute;inset:0;width:100%;height:100%}
-.hero-in{position:relative;text-align:center;padding:110px 20px 80px;max-width:1000px}
+.hero-in{position:relative;text-align:center;padding:100px 20px 70px;max-width:960px;display:flex;flex-direction:column;align-items:center;gap:clamp(12px,2vh,22px);z-index:2}
+.hero-in>*{margin:0}
 .hi{font-weight:700;letter-spacing:.2em;color:var(--cyan);font-size:.9rem}
-.hero-in h1{margin:0;font-size:clamp(2.2rem,min(5.6vw,9.5vh),6.5rem);line-height:.95;letter-spacing:.01em;display:flex;flex-direction:column;align-items:center}
+.hero-in h1{margin:0;font-size:clamp(2.4rem,min(5.2vw,9vh),6rem);line-height:.95;letter-spacing:.01em;display:flex;flex-direction:column;align-items:center}
 .hero-in h1 .c{display:inline-block;transform:translateY(110%);animation:up .8s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--i)*.035s)}
 .mask{overflow:hidden;display:block}
 @keyframes up{to{transform:none}}
-.sub{font-family:Anton;font-size:clamp(1.3rem,min(3.4vw,5.5vh),2.8rem);text-transform:uppercase;margin:0;line-height:1;letter-spacing:.02em}
-.intro{max-width:34em;margin:0}
+.sub{font-family:Anton;font-size:clamp(1.3rem,min(3.2vw,5vh),2.6rem);text-transform:uppercase;margin:0;line-height:1.05;letter-spacing:.02em;color:var(--ink)}
+.intro{max-width:32em;margin:0;color:var(--muted);font-size:1.05rem;line-height:1.55}
 .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;font:700 1rem "Space Grotesk";text-transform:uppercase;letter-spacing:.04em;padding:16px 28px;border-radius:99px;border:3px solid var(--lime);background:var(--lime);color:#111;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
-.btn.alt{background:var(--navy);color:var(--lime)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 1rem "Space Grotesk";text-transform:uppercase;letter-spacing:.04em;padding:16px 28px;min-height:48px;border-radius:99px;border:3px solid var(--lime);background:var(--lime);color:#111;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn.alt{background:var(--card);border-color:var(--border);color:var(--lime)}
+.btn.alt:hover{background:var(--lime);border-color:var(--lime);color:#111}
 .btn:hover{background:var(--cyan);border-color:var(--cyan);color:#111}
-.avail{display:inline-flex;gap:8px;align-items:center;background:#000a;border:1px solid var(--neon);border-radius:99px;padding:4px 14px;font-size:.85rem;margin-bottom:18px}
+.avail{display:inline-flex;gap:8px;align-items:center;background:rgba(11,15,23,.75);border:1px solid var(--border);border-radius:99px;padding:5px 16px;font-size:.85rem;margin-bottom:12px;color:var(--ink);letter-spacing:.04em;font-weight:700;text-transform:uppercase}
 .avail i{width:9px;height:9px;border-radius:50%;background:var(--neon);animation:pulse 1.6s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 #75ff9b99}100%{box-shadow:0 0 0 9px #75ff9b00}}
-.scroll{position:absolute;bottom:14px;left:50%;translate:-50% 0;font-size:.75rem;letter-spacing:.2em;color:#111;font-weight:700;text-decoration:none;animation:bob 1.8s infinite}
-@keyframes bob{50%{translate:-50% 8px}}
+.scroll{position:absolute;bottom:14px;left:50%;translate:-50% 0;font-size:.75rem;letter-spacing:.2em;color:var(--muted);font-weight:700;text-decoration:none;animation:bob 1.8s infinite;z-index:5;padding:6px 12px;border-radius:99px;transition:color .2s}
+.scroll:hover{color:var(--lime)}
+@keyframes bob{50%{translate:-50% 6px}}
 .shape{position:absolute;pointer-events:none;will-change:transform}
-.mascot{position:absolute;right:max(2vw,10px);bottom:60px;width:clamp(100px,15vw,190px);cursor:pointer;z-index:2;background:none;border:0;padding:0}
-.mascot svg{width:100%;overflow:visible;animation:float 3.5s ease-in-out infinite}
+.mascot{position:absolute;right:max(3vw,20px);bottom:clamp(50px,11vh,110px);width:clamp(85px,10vw,135px);cursor:pointer;z-index:4;background:none;border:0;padding:0;transition:transform .2s}
+.mascot svg{width:100%;overflow:visible;animation:float 4s ease-in-out infinite}
 .mascot.jump svg{animation:jump .6s}
-@keyframes float{50%{transform:translateY(-12px) rotate(3deg)}}
-@keyframes jump{40%{transform:translateY(-60px) scale(.95,1.1)}}
-.bubble{position:absolute;right:70%;top:-14px;background:var(--off);color:#111;font-weight:700;padding:8px 12px;border-radius:14px 14px 2px 14px;white-space:nowrap;opacity:0;transition:opacity .3s;font-size:.85rem}
-.mascot.say .bubble{opacity:1}
-.marq{background:var(--lime);color:#111;overflow:hidden;white-space:nowrap;border-block:3px solid #111;padding:10px 0}
+@keyframes float{50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes jump{40%{transform:translateY(-40px) scale(.95,1.1)}}
+.bubble{position:absolute;right:85%;top:-10px;background:var(--card);border:2px solid var(--border);color:var(--ink);font-weight:700;padding:8px 12px;border-radius:14px 14px 2px 14px;white-space:nowrap;opacity:0;transition:opacity .25s,transform .25s;font-size:.85rem;box-shadow:0 8px 16px rgba(0,0,0,.4);pointer-events:none}
+.mascot.say .bubble{opacity:1;transform:translateY(-4px)}
+.marq{background:var(--card);color:var(--ink);overflow:hidden;white-space:nowrap;border-block:2px solid var(--border);padding:12px 0}
 .marq div{display:inline-block;font-family:Anton;font-size:2rem;text-transform:uppercase;animation:mq 28s linear infinite}
-.marq span{margin:0 18px}
+.marq span{margin:0 18px;color:var(--lime)}
 @keyframes mq{to{transform:translateX(-50%)}}
 .rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
 h2{font-size:clamp(3rem,11vw,8rem);color:var(--lime);margin-bottom:40px}
 h2 em{font-style:normal;color:var(--cyan)}
-#about{background:var(--blue)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{background:var(--navy);border-radius:28px 28px 28px 4px;padding:26px;border:2px solid var(--lime)}
-.card:nth-child(2){border-radius:4px 28px 28px 28px;border-color:var(--cyan)}
-.card h3{font-size:2rem;color:var(--neon);margin-bottom:10px}
-.lead{font-size:clamp(1.3rem,3vw,2rem);max-width:820px;margin:0 0 30px;font-weight:500}
-.lead b{background:var(--lime);color:#111;padding:0 6px}
-.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.proj{display:flex;flex-direction:column;grid-column:span var(--s,3);background:var(--navy);border:3px solid var(--off);border-radius:36px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;padding:0;font:inherit;transition:transform .15s,border-color .3s}
-.proj.narrow{border-radius:4px 36px 36px 36px}
-.proj:hover{border-color:var(--lime)}
+#about{background:var(--bg)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:760px){.cards{grid-template-columns:1fr;gap:18px}}
+.fc{display:block;width:100%;min-height:250px;perspective:1000px;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer;position:relative;border-radius:24px}
+.fc:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+.fc .in2{position:relative;display:block;width:100%;height:100%;min-height:250px;transition:transform .45s cubic-bezier(.2,.85,.25,1);transform-style:preserve-3d;border-radius:24px}
+.fc.is-flipped .in2{transform:rotateY(180deg)}
+@media(hover:hover) and (pointer:fine){
+  .fc:not(.is-flipped):hover:not(.just-unflipped) .in2{transform:rotateY(180deg)}
+}
+.fc .ft,.fc .bk{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;padding:26px 28px;background:var(--card);border:2px solid var(--border);box-shadow:0 12px 28px rgba(0,0,0,.35);transition:border-color .25s,box-shadow .25s}
+@media(max-width:640px){.fc,.fc .in2{min-height:235px}.fc .ft,.fc .bk{padding:22px 20px}}
+.fc:hover .ft,.fc.is-flipped .ft{border-color:var(--lime);box-shadow:0 16px 36px rgba(0,0,0,.45)}
+.fc .bk{transform:rotateY(180deg);background:linear-gradient(160deg,#161F30 0%,#10172A 100%);border-color:var(--cyan)}
+.fc:hover .bk,.fc.is-flipped .bk{border-color:var(--cyan);box-shadow:0 16px 36px rgba(82,229,255,.15)}
+.fc-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.fc-badge{font-family:"Space Grotesk",sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan);background:rgba(82,229,255,.1);border:1px solid rgba(82,229,255,.25);border-radius:99px;padding:4px 14px}
+.fc-badge-back{color:var(--lime);background:rgba(184,255,59,.1);border-color:rgba(184,255,59,.25)}
+.fc-icon{color:var(--lime);font-size:1rem}
+.fc-flip-btn{color:var(--muted);font-size:.9rem}
+.fc-body{flex:1 1 auto;display:flex;align-items:center}
+.fc-title{font-family:"Space Grotesk",system-ui,sans-serif;font-size:1.28rem;font-weight:700;color:#FFF;line-height:1.45;margin:0}
+@media(max-width:640px){.fc-title{font-size:1.15rem;line-height:1.4}}
+.fc-desc{font-family:"Space Grotesk",system-ui,sans-serif;font-size:1.06rem;font-weight:500;color:#F1F5F9;line-height:1.6;margin:0}
+@media(max-width:640px){.fc-desc{font-size:.95rem;line-height:1.55}}
+.fc-foot{display:flex;justify-content:flex-end;align-items:center;padding-top:14px;border-top:1px dashed var(--border);margin-top:12px}
+.fc-cue{font-size:.82rem;font-weight:700;color:var(--lime);display:inline-flex;align-items:center;gap:6px;letter-spacing:.04em;text-transform:uppercase}
+.fc-cue-back{color:var(--cyan)}
+.fc-arrow{font-style:normal;font-size:1.05rem;transition:transform .3s}
+.fc:hover .fc-arrow,.fc.is-flipped .fc-arrow{transform:rotate(180deg)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.proj{display:flex;flex-direction:column;grid-column:span 1;min-width:0;background:var(--card);border:2px solid var(--border);border-radius:28px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;padding:0;font:inherit;transition:transform .2s,border-color .25s,translate .2s}
+.proj:hover{border-color:var(--lime);translate:0 -3px}
+.proj:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
 .cover{aspect-ratio:16/9;overflow:hidden;position:relative}
-.proj .cover{aspect-ratio:auto;flex:1 1 auto;min-height:clamp(200px,24vw,340px)}
+.proj .cover{aspect-ratio:16/9;flex:none;min-height:0;background:var(--bg)}
 .cover svg,.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
-.proj:hover .cover svg,.proj:hover .cover img{transform:scale(1.08)}
+.proj:hover .cover svg,.proj:hover .cover img{transform:scale(1.025)}
+.proj .cover img{object-fit:contain;object-position:center;padding:8px}
 .ph{position:absolute;right:12px;top:12px;background:#111;color:var(--lime);font-size:.7rem;padding:3px 10px;border-radius:99px}
-.pbody{padding:20px 24px 26px}
-.pbody h3{font-size:clamp(1.8rem,4vw,3rem);transition:transform .4s,color .3s}
-.proj:hover h3{transform:translateX(10px);color:var(--lime)}
+.pbody{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:18px 20px 22px}
+.pbody h3{font-size:clamp(1.45rem,2.2vw,2.15rem);line-height:1.02;transition:transform .25s,color .25s;color:var(--ink)}
+.proj:hover h3{transform:translateX(4px);color:var(--lime)}
+.pbody p{color:var(--muted);font-size:.95rem;line-height:1.55;margin:10px 0 0}
 .meta{display:flex;justify-content:space-between;color:var(--cyan);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.proj .meta{width:100%;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.08em;margin-bottom:12px}
+.proj .meta span:first-child{padding:4px 10px;border:1px solid var(--border);border-radius:99px;background:var(--bg-sec);color:var(--cyan)}
+.proj .meta span:last-child{color:var(--muted);text-align:right}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
-.tags li{border:1.5px solid var(--neon);border-radius:99px;padding:2px 12px;font-size:.78rem}
-.cta{display:inline-block;margin-top:14px;font-weight:700;color:var(--lime)}
-@media(max-width:800px){.proj,.proj:nth-child(n){grid-column:1/-1}}
-dialog{width:min(1000px,100%);max-width:100%;height:100dvh;max-height:100dvh;margin:0 0 0 auto;border:0;padding:0;background:var(--off);color:#111;overflow:auto}
-dialog::backdrop{background:#000a}
-dialog[open]{animation:slide .5s cubic-bezier(.2,.9,.2,1)}
+.tags li{border:1.5px solid var(--border);background:rgba(82,229,255,.05);color:var(--cyan);border-radius:99px;padding:2px 12px;font-size:.78rem}
+.proj .tags{gap:7px;margin-top:14px}
+.proj .tags li{background:rgba(82,229,255,.08);padding:4px 10px;font-size:.73rem}
+.cta{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:18px;font-weight:700;color:var(--lime);transition:color .2s}
+.proj:hover .cta{color:var(--cyan)}
+.project-filters{display:flex;flex-wrap:wrap;gap:8px;margin:-12px 0 12px}
+.project-filter{min-height:44px;padding:8px 16px;border:1px solid var(--border);border-radius:99px;background:var(--card);color:var(--muted);font:700 .84rem "Space Grotesk";cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.project-filter:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-2px)}
+.project-filter[aria-pressed="true"]{background:var(--lime);border-color:var(--lime);color:#0D1117}
+.project-filter:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.project-count{min-height:1.5em;margin:0 0 22px;color:var(--muted);font-size:.85rem}
+.proj[hidden]{display:none}
+.proj.filter-enter{animation:project-enter .24s ease-out both}
+@keyframes project-enter{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:960px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}}
+@media(max-width:640px){.grid{grid-template-columns:1fr;gap:16px}.pbody{padding:18px}.project-filters{margin-top:-8px}}
+dialog{max-width:100%;border:0;padding:0;overflow:auto;overscroll-behavior:contain;scrollbar-color:var(--border) var(--bg)}
+dialog::backdrop{background:rgba(0,0,0,.76);backdrop-filter:blur(5px)}
+#dlg{width:min(1080px,calc(100% - 40px));height:min(100dvh,960px);max-height:100dvh;margin:auto;background:var(--bg);color:var(--ink);border:1px solid var(--border);border-radius:24px;box-shadow:0 28px 90px rgba(0,0,0,.6)}
+#dlg[open]{animation:slide .4s cubic-bezier(.2,.9,.2,1)}
 @keyframes slide{from{transform:translateX(100%)}}
-.cs{padding:30px clamp(20px,5vw,60px) 60px}
-.cs h2{color:var(--blue);font-size:clamp(3rem,9vw,6rem);margin:20px 0}
-.cs h3{font-size:1.8rem;color:var(--blue);margin:28px 0 6px}
-.cs ul{padding-left:20px}.cs ul.tags{padding:0}
-.close{position:sticky;top:0;float:right;background:#111;color:var(--lime);border:0;border-radius:99px;padding:10px 20px;font:700 1rem "Space Grotesk";cursor:pointer;z-index:2}
-.cs .tags li{border-color:var(--blue)}
-.cs .btn{border-color:#111;background:#111;color:var(--lime);margin:6px 6px 0 0}
-.cs .btn[aria-disabled=true]{opacity:.5;cursor:not-allowed;background:transparent;color:#111}
-.cs .cover{border-radius:24px;border:3px solid #111}
-#skills{background:var(--lime);color:#111}#skills h2{color:#111}#skills h2 em{color:var(--blue)}
+.cs{padding:0 clamp(20px,5vw,64px) 56px}
+.cs-head{position:sticky;top:0;z-index:4;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin:0 calc(clamp(20px,5vw,64px)*-1) 28px;padding:18px clamp(20px,5vw,64px);background:rgba(13,17,23,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
+.cs-head-main{min-width:0}
+.cs-eyebrow{display:flex;flex-wrap:wrap;gap:8px 14px;margin:0;color:var(--cyan);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.cs h2{color:var(--lime);font-size:clamp(2.5rem,6vw,5.2rem);line-height:.98;margin:12px 0}
+.cs-summary{max-width:62ch;margin:0;color:var(--muted);font-size:1.05rem;line-height:1.65}
+.close{flex:0 0 auto;position:sticky;top:12px;background:var(--card);color:var(--lime);border:1px solid var(--border);border-radius:99px;padding:10px 18px;min-height:44px;font:700 .9rem "Space Grotesk";cursor:pointer;z-index:5;transition:background .2s,color .2s,border-color .2s}
+.close:hover{background:var(--lime);color:#111;border-color:var(--lime)}
+.cs-cover{display:grid;place-items:center;overflow:hidden;min-height:180px;max-height:440px;aspect-ratio:16/8;background:var(--black);border:1px solid var(--border);border-radius:20px}
+.cs-cover img,.cs-cover svg{display:block;width:100%;height:100%;max-height:440px;object-fit:contain}
+.cs-cover .ph{right:16px;top:16px}
+.cs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;margin-top:28px}
+.cs-section{min-width:0;padding:24px;background:var(--bg-sec);border:1px solid var(--border);border-radius:18px}
+.cs-section:nth-child(even){background:var(--card)}
+.cs-section.wide{grid-column:1/-1}
+.cs h3{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",system-ui,sans-serif;font-size:1.12rem;font-weight:700;line-height:1.3;letter-spacing:.01em;color:var(--lime);margin:0 0 14px}
+.cs h3::before{content:"";flex:0 0 18px;height:3px;border-radius:99px;background:var(--lime)}
+.cs-section p,.cs-section li{color:var(--muted);font-size:.98rem;line-height:1.7}
+.cs-section p{margin:0}
+.cs-section ul{margin:0;padding-left:20px}
+.cs .tags{margin:0}
+.cs-section.tech-section{background:var(--bg-sec)}
+.cs .tags li{border:1px solid var(--lime);background:var(--lime);color:#0D1117;font-weight:700;padding:5px 12px}
+.cs-section.gallery-section{background:var(--card)}
+.cs-section.gallery-section .shots{padding:16px;background:var(--bg);border:1px solid var(--border);border-radius:16px}
+.cs .shots{grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr));gap:14px}
+.cs .shot{display:grid;place-items:center;min-height:140px;background:var(--bg-sec);border:1px solid var(--border);border-radius:14px}
+.cs .shot img{width:100%;height:100%;max-height:240px;aspect-ratio:16/10;object-fit:contain;object-position:center}
+.cs .shot:hover img{transform:none}
+.cs .btn{border-color:var(--lime);background:var(--lime);color:#111;margin:4px 8px 0 0}
+.cs .btn:hover{border-color:var(--cyan);background:var(--cyan)}
+.cs .btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;background:transparent;color:var(--muted)}
+@media(max-width:760px){#dlg{width:100%;height:100dvh;margin:0;border:0;border-radius:0}.cs{padding:0 20px 36px}.cs-head{margin:0 -20px 20px;padding:14px 20px;gap:12px}.cs h2{font-size:clamp(2.1rem,10vw,3.4rem)}.cs-summary{font-size:.94rem}.cs-grid{gap:16px 12px;margin-top:20px}.cs-section{padding:20px}.cs-cover{aspect-ratio:16/10;min-height:150px}.cs-section.gallery-section .shots{padding:12px}}
+@media(max-width:560px){.cs-grid{grid-template-columns:1fr}.cs-section.wide{grid-column:auto}.cs-head{align-items:flex-start}.cs .close{padding:9px 12px;font-size:.82rem}.cs-eyebrow{font-size:.7rem}.cs-section p,.cs-section li{font-size:.94rem}.cs-section{padding:18px}.cs h3{font-size:1.04rem;margin-bottom:12px}}
+#skills{background:var(--bg-sec);color:var(--ink)}#skills h2{color:var(--lime)}#skills h2 em{color:var(--cyan)}
 .chips{display:flex;flex-wrap:wrap;gap:12px}
-.chip{background:#111;color:var(--lime);border:0;border-radius:99px;padding:12px 24px;font:700 1.1rem "Space Grotesk";cursor:pointer;transition:transform .25s,opacity .8s}
-.chip:nth-child(3n){background:var(--blue);color:#fff}.chip:nth-child(3n+1){background:var(--navy)}
-.chip:hover,.chip:focus-visible{transform:translateY(-6px) rotate(-3deg)}
+.chip{background:var(--card);color:var(--ink);border:2px solid var(--border);border-radius:99px;padding:12px 24px;font:700 1.1rem "Space Grotesk";cursor:pointer;transition:transform .25s,border-color .2s,opacity .8s}
+.chip:hover,.chip:focus-visible{transform:translateY(-4px);border-color:var(--cyan);color:var(--cyan)}
 #tip{margin-top:26px;min-height:3.2em;font-size:1.3rem;font-weight:500}
-.tl{position:relative;margin-left:14px;padding-left:34px;border-left:4px solid var(--cyan)}
-.tl article{position:relative;margin-bottom:36px;background:var(--off);color:#111;border-radius:24px;padding:22px 26px}
-.tl article::before{content:"";position:absolute;left:-49px;top:26px;width:20px;height:20px;border-radius:50%;background:var(--lime);border:4px solid var(--navy)}
-.tl h3{font-size:1.9rem;color:var(--blue)}.tl small{font-weight:700;color:#555}
-#contact{background:var(--blue);overflow:hidden}
-#contact h2{font-size:clamp(3rem,10vw,7.5rem)}
+.tl{position:relative;margin-left:14px;padding-left:34px;border-left:4px solid var(--border)}
+.tl article{position:relative;margin-bottom:36px;background:var(--card);color:var(--ink);border:2px solid var(--border);border-radius:24px;padding:22px 26px}
+.tl article::before{content:"";position:absolute;left:-49px;top:26px;width:20px;height:20px;border-radius:50%;background:var(--lime);border:4px solid var(--bg)}
+.tl h3{font-size:1.9rem;color:var(--cyan);margin-top:4px}.tl small{font-weight:700;color:var(--lime);text-transform:uppercase;letter-spacing:.05em}.tl b{color:var(--ink);display:block;margin:4px 0 8px}.tl ul{color:var(--muted);padding-left:20px}
+#contact{background:var(--bg);overflow:hidden}
+#contact h2{font-size:clamp(3rem,10vw,7.5rem);color:var(--lime)}
 .cwrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 @media(max-width:800px){.cwrap{grid-template-columns:1fr}}
-.links a{display:block;font-family:Anton;font-size:2.2rem;text-transform:uppercase;text-decoration:none;border-bottom:3px solid var(--lime);padding:6px 0;transition:padding .3s,color .3s}
-.links a:hover{padding-left:16px;color:var(--lime)}
+.links a{display:block;font-family:Anton;font-size:2.2rem;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--border);color:var(--ink);padding:6px 0;transition:padding .3s,color .3s,border-color .3s}
+.links a:hover{padding-left:16px;color:var(--lime);border-bottom-color:var(--lime)}
+.links p{margin:6px 0 18px;font-weight:500;color:var(--muted)}
+#contact .email-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;margin:8px 0 4px}
+#contact .email-row p{margin:0;overflow-wrap:anywhere}
+#contact .copy-email{min-height:44px;padding:9px 16px;border:2px solid var(--border);border-radius:99px;background:var(--card);color:var(--lime);font:700 .88rem "Space Grotesk";cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+#contact .copy-email:hover{background:var(--lime);border-color:var(--lime);color:#111}
+#contact .copy-status{min-height:1.5em;margin:2px 0 18px;color:var(--muted);font-size:.88rem;font-weight:700}
+#contact .copy-status[data-state="success"],#contact #fmsg[data-state="success"]{color:var(--lime)}
+#contact .copy-status[data-state="error"],#contact #fmsg[data-state="error"]{color:#FFB4B4}
 form{display:grid;gap:14px}
-label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
-input,textarea{width:100%;background:var(--navy);color:var(--off);border:3px solid var(--navy);border-radius:16px;padding:14px;font:inherit;margin-top:4px}
+label{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+input,textarea{width:100%;background:var(--card);color:var(--ink);border:2px solid var(--border);border-radius:16px;padding:14px;font:inherit;margin-top:4px;transition:border-color .2s}
 input:focus,textarea:focus{border-color:var(--lime);outline:0}
-#fmsg{min-height:1.5em;font-weight:700}
-footer{background:#111;padding:26px 20px;text-align:center;font-size:.85rem}
+#contact input:focus-visible,#contact textarea:focus-visible,#contact .copy-email:focus-visible,#contact .btn:focus-visible,#contact .links a:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+#contact input[aria-invalid="true"],#contact textarea[aria-invalid="true"]{border-color:#FF8B8B;box-shadow:0 0 0 1px rgba(255,139,139,.2)}
+#fmsg{min-height:1.5em;font-weight:700;line-height:1.5}
+#fmsg a{display:inline-block;margin:6px 10px 0 0;color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+footer{background:var(--black);border-top:1px solid var(--border);color:var(--muted);padding:26px 20px;text-align:center;font-size:.85rem}
 .cur{position:fixed;left:0;top:0;width:34px;height:34px;border:2px solid var(--lime);border-radius:50%;pointer-events:none;z-index:50;mix-blend-mode:difference;transition:width .2s,height .2s;display:none}
 @media(hover:hover) and (pointer:fine){.cur{display:block}}
 #bar{position:fixed;top:0;left:0;right:0;height:4px;background:var(--cyan);transform-origin:0 50%;transform:scaleX(0);z-index:30}
-.cards .rv:nth-child(odd){transform:translate(-70px,30px) rotate(-4deg)}.cards .rv:nth-child(even){transform:translate(70px,30px) rotate(4deg)}.cards .rv.in{transform:none}
+.cards .rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.cards .rv.in{opacity:1;transform:none}
 .tl .rv{transform:translateX(-60px)}.tl .rv.in{transform:none}
-.chip.rv{transform:scale(.4) rotate(-12deg)}.chip.rv.in{transform:none}
+.chip.rv{transform:scale(.6);transition:transform .4s,opacity .4s}.chip.rv.in{transform:none}
 .proj.rv{opacity:0;transform:none;translate:0 70px;transition:opacity .8s,translate .9s cubic-bezier(.2,.9,.2,1),transform .15s,border-color .3s}.proj.rv.in{opacity:1;translate:none}
 .proj.rv .cover svg,.proj.rv .cover img{scale:1.4;transition:scale 1.3s cubic-bezier(.2,.9,.2,1),transform .6s}.proj.rv.in .cover svg,.proj.rv.in .cover img{scale:1.15}
 .cover svg,.cover img{scale:1.15}
 .tl::after{content:"";position:absolute;left:-4px;top:0;width:4px;height:var(--tp,0%);background:var(--lime)}
-.abt{display:grid;grid-template-columns:1fr 1.4fr;gap:30px;align-items:center;margin-bottom:30px}.abt .lead{margin:0}
-@media(max-width:800px){.abt{grid-template-columns:1fr}}
-.me{margin:0;max-width:640px;width:100%;justify-self:center;perspective:900px}
-.mewrap{position:relative;animation:bob2 4s ease-in-out infinite;transition:transform .2s;transform-style:preserve-3d}
-.me img{display:block;width:100%;height:auto;border-radius:32px 32px 32px 6px;border:3px solid var(--lime);box-shadow:10px 10px 0 #111}
+.abt{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;margin-bottom:48px}
+@media(max-width:860px){.abt{grid-template-columns:1fr;gap:28px;margin-bottom:36px}}
+.abt-bio{display:flex;flex-direction:column;gap:16px}
+.abt-bio .lead{margin:0;font-size:clamp(1.15rem,2.4vw,1.65rem);line-height:1.55;color:var(--ink);font-weight:500}
+.abt-bio .lead b{background:var(--lime);color:#111;padding:1px 6px;border-radius:4px}
+.abt-highlights{display:flex;flex-wrap:wrap;gap:8px}
+.abt-pill{font-size:.82rem;font-weight:700;color:var(--lime);background:rgba(184,255,59,.08);border:1px solid rgba(184,255,59,.25);border-radius:99px;padding:5px 14px;letter-spacing:.02em}
+.me{margin:0;max-width:560px;width:100%;justify-self:center;perspective:900px}
+.mewrap{position:relative;aspect-ratio:1;animation:bob2 4s ease-in-out infinite;transition:transform .2s;transform-style:preserve-3d}
+.deco{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.me img.cut{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:84%;height:auto;border:0;border-radius:0;box-shadow:none;filter:drop-shadow(0 20px 22px rgba(0,0,0,.35))}
 .mb{position:absolute;font:700 .85rem "Space Grotesk";background:var(--lime);color:#111;border:2px solid #111;border-radius:99px;padding:4px 14px;animation:fl 3s ease-in-out infinite}
-.b1{left:-14px;top:12%}.b2{right:-10px;top:42%;animation-delay:-1s;background:var(--cyan)}.b3{left:6%;bottom:-14px;animation-delay:-2s}
-.meb{position:absolute;right:6%;top:-16px;background:var(--off);color:#111;border:3px solid #111;border-radius:18px 18px 18px 2px;padding:8px 14px;font:700 .9rem "Space Grotesk";cursor:pointer;transition:transform .2s}.meb:hover{transform:scale(1.06) rotate(-2deg)}
-@media(prefers-reduced-motion:reduce){.mewrap{transform:none!important}}
-.me .bob{animation:bob2 3s ease-in-out infinite}@keyframes bob2{50%{transform:translateY(5px)}}
-.me .wave{transform-origin:178px 210px;animation:wave 1.6s ease-in-out infinite}@keyframes wave{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(16deg)}}
-.me .bl{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
-.me .fl{animation:fl 3s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-10px)}}
-.fc{display:block;min-height:270px;perspective:900px;background:none;border:0;padding:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
-.fc .in2{position:relative;display:block;height:100%;min-height:270px;transition:transform .7s cubic-bezier(.2,.9,.2,1);transform-style:preserve-3d}
-.fc.on .in2{transform:rotateY(180deg)}.fc:not(.on):hover .in2,.fc:not(.on):focus-visible .in2{transform:rotateY(-10deg) translateY(-6px)}
-.fc .ft,.fc .bk{position:absolute;inset:0;display:block;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--navy);border:2px solid var(--lime);border-radius:28px 28px 28px 4px;padding:24px;overflow:auto}
-.fc .bk{transform:rotateY(180deg);background:var(--lime);color:#111;border-color:#111}
-.fc .h{display:block;font-family:Anton;font-size:2rem;text-transform:uppercase;color:var(--neon);margin-bottom:10px;line-height:1}.fc .bk .h{color:#111}.fc .p{display:block}
-.fc small{position:absolute;bottom:14px;right:20px;color:var(--cyan);font-weight:700}
-.me .sway{transform-origin:64px 216px;animation:sway 3.4s ease-in-out infinite}@keyframes sway{50%{transform:rotate(4deg)}}
-.filt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.fb{border:3px solid #111;background:transparent;color:#111;border-radius:99px;padding:6px 18px;font:700 .9rem "Space Grotesk";cursor:pointer}.fb[aria-pressed=true]{background:#111;color:var(--lime)}
-.chip[aria-pressed=true]{box-shadow:0 0 0 4px #fff,0 0 0 7px #111}
-.chip.rv.in.off{opacity:.15!important;transform:scale(.7)!important;pointer-events:none}
-#tip{background:#111;color:var(--off);border-radius:24px 24px 24px 4px;padding:20px 24px;max-width:680px;min-height:6em;font-size:1.1rem}
-#tip.pop{animation:pop .4s}@keyframes pop{from{transform:scale(.94);opacity:.4}}
-#tip .tn{font-family:Anton;font-size:2.4rem;text-transform:uppercase;color:var(--lime);margin-right:12px}
-#tip .tc{background:var(--cyan);color:#111;border-radius:99px;padding:2px 12px;font-size:.8rem;font-weight:700}
+.b1{left:0;top:18%}.b2{right:-10px;top:42%;animation-delay:-1s;background:var(--cyan)}.b3{left:6%;bottom:14%;animation-delay:-2s}
+.meb{position:absolute;right:auto;left:2%;top:2%;background:var(--card);color:var(--ink);border:2px solid var(--border);border-radius:18px 18px 18px 2px;padding:8px 14px;font:700 .85rem "Space Grotesk";cursor:pointer;transition:transform .2s,border-color .2s;box-shadow:0 8px 16px rgba(0,0,0,.3)}
+.meb:hover{transform:scale(1.06) rotate(-2deg);border-color:var(--lime)}
+.spin{transform-box:fill-box;transform-origin:center;animation:wob 6s ease-in-out infinite}
+@keyframes wob{50%{transform:rotate(20deg)}}
+.fl2{animation:fl 3.5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}
+@keyframes bob2{50%{transform:translateY(5px)}}
+#skills{background:var(--bg-sec);color:var(--ink);padding:100px 0}
+#skills h2{color:var(--lime);margin-bottom:10px}
+#skills h2 em{color:var(--cyan)}
+.skills-intro{color:var(--muted);font-size:1.02rem;max-width:620px;margin:0 0 28px;line-height:1.5}
+.filt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.fb{min-height:44px;border:2px solid var(--border);background:var(--card);color:var(--muted);border-radius:99px;padding:8px 18px;font:700 .85rem "Space Grotesk";cursor:pointer;transition:all .2s}
+.fb:hover{border-color:var(--cyan);color:var(--ink)}
+.fb[aria-pressed=true]{background:var(--lime);color:#111;border-color:var(--lime)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.chip{background:var(--card);color:var(--ink);border:2px solid var(--border);border-radius:99px;padding:10px 22px;font:700 1rem "Space Grotesk";cursor:pointer;transition:transform .2s,border-color .2s,background .2s,color .2s}
+.chip:hover,.chip:focus-visible{transform:translateY(-3px);border-color:var(--cyan);color:var(--cyan)}
+.chip[aria-pressed=true]{background:var(--lime);color:#111;border-color:var(--lime);box-shadow:0 0 0 3px var(--bg-sec),0 0 0 5px var(--lime)}
+.chip.off{opacity:.2;pointer-events:none;transform:scale(.95)}
+#tip{background:var(--card);color:var(--ink);border:2px solid var(--border);border-radius:24px 24px 24px 4px;padding:22px 26px;max-width:720px;min-height:6.5em;font-size:1.05rem;box-shadow:0 12px 28px rgba(0,0,0,.35)}
+#tip.pop{animation:pop .35s}@keyframes pop{from{transform:scale(.96);opacity:.5}}
+#tip .tn{font-family:Anton;font-size:2.2rem;text-transform:uppercase;color:var(--lime);margin-right:12px;letter-spacing:.02em}
+#tip .tc{background:rgba(82,229,255,.12);color:var(--cyan);border:1px solid rgba(82,229,255,.25);border-radius:99px;padding:3px 12px;font-size:.8rem;font-weight:700;display:inline-block;vertical-align:middle}
+#tip .td{margin-top:8px;color:var(--muted);line-height:1.55}
+#tip .tu{margin-top:8px;font-size:.9rem;color:var(--ink);border-top:1px dashed var(--border);padding-top:8px}
+#tip .tu b{color:var(--lime)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.hero-in h1 .c{transform:none}.rv,.cards .rv,.tl .rv,.chip.rv{opacity:1!important;transform:none!important}.proj.rv{opacity:1!important;translate:none!important}}
 .cover img{object-position:top}
 .shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .shot{border:3px solid #111;border-radius:16px;overflow:hidden;padding:0;background:none;cursor:zoom-in}.shot img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;transition:transform .4s}.shot:hover img{transform:scale(1.06)}
-#lb{max-width:100%;width:100%;margin:0;background:#000e;padding:16px}#lb[open]{display:block}#lb img{display:block;max-width:100%;margin:40px auto 0;border-radius:12px}
-.hero-in{display:flex;flex-direction:column;align-items:center;gap:clamp(12px,2.2vh,24px);width:min(100%,60vw);max-width:none;padding:96px 0 70px}
+#lb{width:100%;height:100dvh;margin:0;background:rgba(7,10,15,.96);padding:72px 20px 20px}#lb[open]{display:block}#lb .close{position:fixed;top:16px;right:16px}#lb img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 100px);object-fit:contain;margin:0 auto;border-radius:12px}
+#lb .preview-nav{position:fixed;top:50%;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--border);border-radius:50%;background:var(--card);color:var(--lime);font:700 1.5rem "Space Grotesk";cursor:pointer;transform:translateY(-50%);transition:background .2s,color .2s,border-color .2s}
+#lb .preview-nav:hover:not(:disabled){background:var(--lime);border-color:var(--lime);color:#0D1117}
+#lb .preview-nav:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+#lb .preview-nav:disabled{opacity:.35;cursor:default}
+#lb-prev{left:18px}#lb-next{right:18px}
+#lb-count{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);margin:0;padding:6px 12px;border:1px solid var(--border);border-radius:99px;background:var(--card);color:var(--ink);font-size:.85rem;font-weight:700}
+@media(max-width:560px){#lb{padding:76px 12px 58px}#lb .preview-nav{width:44px;height:44px;top:auto;bottom:12px;transform:none}#lb-prev{left:calc(50% - 52px)}#lb-next{right:calc(50% - 52px)}#lb-count{bottom:22px}}
+.hero-in{display:flex;flex-direction:column;align-items:center;gap:clamp(12px,2vh,22px);width:min(100%,60vw);max-width:none;padding:96px 0 70px}
 .hero-in>*{margin:0}
 .ln{display:block;overflow:hidden;padding:.02em .05em .07em;text-wrap:balance}
-.l1{color:var(--lime)}.l2{color:var(--blue);font-size:1.5em;line-height:.9}
+.l1{color:var(--lime)}.l2{color:var(--cyan);font-size:1.5em;line-height:.9}
 .w{display:inline-block;white-space:nowrap}
-.hero-in .avail{text-transform:uppercase;letter-spacing:.05em;font-weight:700;background:var(--navy);border:2px solid var(--lime)}
-.hero-in .btns{flex-wrap:nowrap}
-.mascot{width:clamp(90px,11vw,170px);right:max(1.5vw,10px);bottom:15vh}
+.hero-in .avail{text-transform:uppercase;letter-spacing:.05em;font-weight:700;background:var(--card);border:2px solid var(--border);color:var(--ink)}
+.hero-in .btns{flex-wrap:wrap}
 .room.m{display:none}
-@media(max-width:640px){.room.d{display:none}.room.m{display:block}.hero-in{width:84vw;padding:90px 0 60px}.shape{display:none}.mascot{bottom:10px;width:78px}.hero-in h1{font-size:clamp(2.2rem,12.5vw,4rem)}.hero-in .btn{padding:14px 18px;font-size:.85rem}.hero-in .btns{gap:8px}}
-.me{max-width:600px}.mewrap{aspect-ratio:1}
-.deco{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.me img.cut{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:84%;height:auto;border:0;border-radius:0;box-shadow:none;filter:drop-shadow(0 20px 22px rgba(0,0,0,.35))}
-.spin{transform-box:fill-box;transform-origin:center;animation:wob 6s ease-in-out infinite}@keyframes wob{50%{transform:rotate(20deg)}}
-.fl2{animation:fl 3.5s ease-in-out infinite}
-.me .b1{left:0;top:18%}.me .b3{left:6%;bottom:14%}.me .meb{right:auto;left:2%;top:2%}
-.abt{margin-bottom:-60px}.cards{position:relative;z-index:2}
+@media(max-width:640px){
+  .room.d{display:none}
+  .room.m{display:block}
+  .hero-in{width:92vw;max-width:420px;padding:calc(66px + env(safe-area-inset-top,0px)) 12px 66px;gap:12px}
+  .shape{display:none}
+  .hero-in h1{font-size:clamp(2rem,10.2vw,3.2rem);line-height:.95}
+  .sub{font-size:clamp(1.1rem,4.8vw,1.5rem);line-height:1.1}
+  .intro{font-size:.88rem;line-height:1.45;max-width:28em}
+  .btns{gap:10px;width:100%;justify-content:center;flex-wrap:wrap}
+  .hero-in .btn{padding:12px 20px;font-size:.82rem;min-height:46px;flex:1 1 135px;max-width:180px}
+  .mascot{bottom:66px;right:14px;width:52px}
+  .bubble{right:95%;top:-6px;font-size:.72rem;padding:6px 10px;border-radius:10px 10px 2px 10px}
+  .scroll{bottom:10px;font-size:.68rem}
+}
 .proj .cover svg,.proj .cover img{position:absolute;inset:0}
 @media(max-width:800px){.proj .cover{min-height:0;aspect-ratio:16/9;flex:none}}
+/* Global section visual rhythm */
+#home{background:var(--bg-sec)}
+.marq{background:var(--card)}
+main>section:not(#home){border-top:1px solid rgba(42,54,79,.58)}
+#about{background:radial-gradient(ellipse at 78% 38%,rgba(184,255,59,.045),transparent 36%),radial-gradient(ellipse at 12% 82%,rgba(82,229,255,.035),transparent 34%),var(--bg)}
+#projects{background:radial-gradient(ellipse at 14% 16%,rgba(82,229,255,.055),transparent 32%),radial-gradient(ellipse at 88% 78%,rgba(184,255,59,.035),transparent 30%),var(--bg-mid)}
+#skills{background:var(--bg-sec)}
+#experience{background:radial-gradient(ellipse at 18% 42%,rgba(184,255,59,.04),transparent 34%),var(--bg-mid)}
+#experience .tl{border-left-color:rgba(184,255,59,.28)}
+#contact{background:radial-gradient(ellipse at 88% 26%,rgba(82,229,255,.05),transparent 34%),radial-gradient(ellipse at 14% 86%,rgba(184,255,59,.03),transparent 32%),var(--bg)}
 </style>
 </head>
 <body>
@@ -230,19 +357,47 @@ footer{background:#111;padding:26px 20px;text-align:center;font-size:.85rem}
 <div class="marq" aria-hidden="true"><div id="mq1"></div></div>
 <section id="about"><div class="wrap">
   <h2 class="rv">About<br><em>me</em></h2>
-  <div class="abt"><p class="lead rv" id="about-t"></p>
-  <figure class="me rv" id="me"><div class="mewrap"><svg class="deco" viewBox="0 0 600 600" aria-hidden="true"><path d="M110 360C60 200 200 70 370 90s220 130 200 290-120 200-270 180S140 480 110 360Z" fill="#B8FF3B"/><ellipse cx="300" cy="330" rx="290" ry="115" transform="rotate(-20 300 330)" fill="none" stroke="#52E5FF" stroke-width="12"/><g class="spin"><path d="M60 80l38 38M98 80 60 118" stroke="#B8FF3B" stroke-width="16" stroke-linecap="round"/></g><polygon class="fl2" points="545 130 575 160 545 190 515 160" fill="#52E5FF" stroke="#111" stroke-width="5"/><circle cx="22" cy="260" r="18" fill="#52E5FF" stroke="#111" stroke-width="5"/><circle cx="566" cy="450" r="20" fill="#B8FF3B" stroke="#111" stroke-width="5"/></svg><img class="cut" src="images/Profile/KevinCutout.webp" alt="Kevin Octavianus Santoso" width="897" height="841"><span class="mb b1">PHP</span><span class="mb b2">SQL</span><span class="mb b3">JS</span><button class="meb" type="button">Hi! Click me</button></div></figure></div>
+  <div class="abt">
+    <div class="abt-bio rv">
+      <p class="lead" id="about-t"></p>
+      <div class="abt-highlights">
+        <span class="abt-pill">Web Application Developer</span>
+        <span class="abt-pill">IT Support Specialist</span>
+        <span class="abt-pill">Informatics Graduate (2026)</span>
+      </div>
+    </div>
+    <figure class="me rv" id="me">
+      <div class="mewrap">
+        <svg class="deco" viewBox="0 0 600 600" aria-hidden="true">
+          <path d="M110 360C60 200 200 70 370 90s220 130 200 290-120 200-270 180S140 480 110 360Z" fill="#B8FF3B"/>
+          <ellipse cx="300" cy="330" rx="290" ry="115" transform="rotate(-20 300 330)" fill="none" stroke="#52E5FF" stroke-width="12"/>
+          <g class="spin"><path d="M60 80l38 38M98 80 60 118" stroke="#B8FF3B" stroke-width="16" stroke-linecap="round"/></g>
+          <polygon class="fl2" points="545 130 575 160 545 190 515 160" fill="#52E5FF" stroke="#111" stroke-width="5"/>
+          <circle cx="22" cy="260" r="18" fill="#52E5FF" stroke="#111" stroke-width="5"/>
+          <circle cx="566" cy="450" r="20" fill="#B8FF3B" stroke="#111" stroke-width="5"/>
+        </svg>
+        <img class="cut" src="images/Profile/KevinCutout.webp" alt="Kevin Octavianus Santoso" width="897" height="841" loading="lazy" decoding="async">
+        <span class="mb b1">PHP</span>
+        <span class="mb b2">SQL</span>
+        <span class="mb b3">JS</span>
+        <button class="meb" type="button">Hi! Click me</button>
+      </div>
+    </figure>
+  </div>
   <div class="cards" id="cards"></div>
 </div></section>
 <section id="projects"><div class="wrap">
   <h2 class="rv">Selected<br><em>work</em></h2>
+  <div class="project-filters rv" id="project-filters" role="group" aria-label="Filter projects"></div>
+  <p class="project-count rv" id="project-count" role="status" aria-live="polite"></p>
   <div class="grid" id="grid"></div>
 </div></section>
 <section id="skills"><div class="wrap">
   <h2 class="rv">Tech<br><em>toolbox</em></h2>
-  <div class="filt" id="filt" role="group" aria-label="Filter technologies"></div>
-  <div class="chips" id="chips"></div>
-  <p id="tip" aria-live="polite">Hover or tap a technology.</p>
+  <p class="skills-intro rv">Technologies and tools used across production enterprise modules, research projects, and internal workflows.</p>
+  <div class="filt rv" id="filt" role="group" aria-label="Filter technologies"></div>
+  <div class="chips rv" id="chips"></div>
+  <div id="tip" class="rv" aria-live="polite"></div>
 </div></section>
 <section id="experience"><div class="wrap">
   <h2 class="rv">Journey</h2>
@@ -257,54 +412,54 @@ footer{background:#111;padding:26px 20px;text-align:center;font-size:.85rem}
       <label>Email<input name="email" type="email" required autocomplete="email"></label>
       <label>Message<textarea name="message" rows="5" required></textarea></label>
       <button class="btn" type="submit">Send message</button>
-      <div id="fmsg" role="status"></div>
+      <div id="fmsg" role="status" aria-live="polite"></div>
     </form>
   </div>
 </div></section>
 </main>
 <footer>© <span id="yr"></span> Kevin Octavianus Santoso</footer>
 <dialog id="dlg" aria-label="Project case study"></dialog>
-<dialog id="lb" aria-label="Screenshot preview"><button class="close" aria-label="Close preview" onclick="this.parentNode.close()">Close ✕</button><img alt=""></dialog>
+<dialog id="lb" aria-label="Screenshot preview"><button class="close" type="button" aria-label="Close preview">Close ✕</button><button class="preview-nav" id="lb-prev" type="button" aria-label="Previous screenshot">←</button><img alt=""><p id="lb-count" aria-live="polite"></p><button class="preview-nav" id="lb-next" type="button" aria-label="Next screenshot">→</button></dialog>
 <script>
 /* ===== EDIT YOUR CONTENT HERE ===== */
 const CONFIG={
   logo:"KOS",
   availability:"Open to opportunities",
   intro:"Software developer creating web applications, interactive experiences, and creative technology.",
-  about:"I’m <b>Kevin Octavianus Santoso</b>, an Informatics student from Tangerang with hands-on experience in web application development and IT support. I build internal business systems for inventory, purchasing and quality control, and I love learning new technology.",
+  about:"I’m <b>Kevin Octavianus Santoso</b>, an Informatics Graduate (2026) based in Tangerang with hands-on experience in web application development and IT support. I build internal business systems for inventory, purchasing, and quality control, and I enjoy learning new technologies.",
   email:"kevinoctavian710@gmail.com",
   socials:[{label:"LinkedIn",url:"https://linkedin.com/in/kevin-octavian-710gbuall"},{label:"GitHub",url:"https://github.com/kevoctavian"}],
   cards:[
     {t:"Role",d:"Software Developer / Web Application Developer.",m:"Web Application Developer and IT Support at PT Javinci Berkat Kreatif Sentosa, Jakarta (Sep 2025 – Aug 2026)."},
     {t:"Interests",d:"Web development, software engineering, UI/UX, interactive web experiences, creative technology.",m:"Web Development · Software Engineering · UI/UX · Interactive Web Experiences · Creative Technology"},
-    {t:"Education",d:"Bachelor of Informatics, Bunda Mulia University. GPA 3.68.",m:"Coursework: Database Systems, Software Engineering, Web Programming, Data Structures & Algorithms, Human Computer Interaction (UI/UX)."},
+    {t:"Education",d:"Informatics Graduate (2026) with a Bachelor of Informatics from Bunda Mulia University. GPA: 3.68.",m:"Coursework: Database Systems, Software Engineering, Web Programming, Data Structures & Algorithms, Human Computer Interaction (UI/UX)."},
     {t:"Certification",d:"CertNexus GenAIBIZ Credential (GAZ-210): generative AI in business and responsible AI practices.",m:"Covers AI-driven productivity and automation, responsible AI practices, and integrating AI into business processes and decisions."}],
   skills:[
     ["PHP","Server-side language for internal business applications."],["Python","General-purpose language for scripting and ML."],["JavaScript","Interactive front-ends and tooling."],["SQL","Querying and managing relational data."],["HTML","Semantic markup."],["CSS","Layout and styling."],["Bootstrap","Responsive UI framework."],["jQuery","DOM scripting and AJAX helpers."],["AJAX","Dynamic filtering and product autocomplete."],["MySQL","Relational database."],["SQL Server","Relational database."],["PostgreSQL","Relational database."],["Git & GitHub","Version control and collaboration."],["IT Support","IT service management, hardware, software and network troubleshooting."],["UI/UX","Studied Human Computer Interaction."]],
   projects:[
-    {title:"Rice Leaf Disease Classification",cat:"Machine Learning",year:"2026",c:["#386BFF","#B8FF3B"],shots:["images/RiceLeaf/Home.png","images/RiceLeaf/Upload.png","images/RiceLeaf/History.png","images/RiceLeaf/DiseaseInfo.png","images/RiceLeaf/AdminDashboard.png","images/RiceLeaf/ModelReport.png","images/RiceLeaf/ConfusionMatrix.png"],
-     desc:"A web app that classifies rice leaf diseases from photos using a Random Forest model. My final thesis project.",stack:["Python","Django","scikit-learn","OpenCV","PostgreSQL","Bootstrap 5"],
-     overview:"A web-based system that identifies rice leaf diseases from an uploaded or camera photo. It extracts 92 image features (GLCM, color and LBP), classifies the leaf as Bacterial Leaf Blight, Rice Blast, Tungro or Healthy, and shows a confidence score. The model reaches over 92% test accuracy.",problem:"Rice leaf diseases such as Bacterial Leaf Blight, Rice Blast and Tungro look very similar, so they are hard to tell apart by eye. The goal was to build a web-based classifier with Random Forest and measure how well it works using a confusion matrix.",role:"This is my final thesis project. I built the whole system: the machine learning pipeline and the Django web application, for both users and admins.",
+    {title:"Rice Leaf Disease Classification",cat:"Machine Learning",year:"2026",c:["#386BFF","#B8FF3B"],shots:["images/RiceLeaf/Home.webp","images/RiceLeaf/Upload.webp","images/RiceLeaf/History.webp","images/RiceLeaf/DiseaseInfo.webp","images/RiceLeaf/AdminDashboard.webp","images/RiceLeaf/ModelReport.webp","images/RiceLeaf/ConfusionMatrix.webp"],
+     desc:"A web application that classifies rice leaf diseases from photos using a Random Forest model. This was my final thesis project.",stack:["Python","Django","scikit-learn","OpenCV","PostgreSQL","Bootstrap 5"],
+     overview:"A web-based system that identifies rice leaf diseases from an uploaded photo or an image captured with a device camera. It extracts 92 image features (GLCM, color, and LBP), classifies leaves as Bacterial Leaf Blight, Rice Blast, Tungro, or Healthy, and displays a confidence score. The model reaches over 92% test accuracy.",problem:"Rice leaf diseases such as Bacterial Leaf Blight, Rice Blast, and Tungro can look similar, making accurate identification difficult. The project aimed to build a web-based Random Forest classifier and evaluate its performance using a confusion matrix.",role:"This was my final thesis project. I built the complete system, including the machine learning pipeline and the Django web application for users and administrators.",
      process:"I followed the Waterfall method. The images are preprocessed, 92 features are extracted, the data is balanced with augmentation and BorderlineSMOTE, and a Random Forest is trained with GridSearchCV on the Rice Leaf and Crop Disease dataset (Mendeley Data). The app was then tested with black box testing.",features:["Upload a photo or use the device camera","Layered validation that rejects images that are not rice leaves","Classifies 4 classes with a confidence score","Diagnosis history with filters","Disease information pages","User statistics","Admin panel with model metrics, confusion matrix and ROC curve"],github:"https://github.com/kevoctavian/ProgramRLD",demo:""},
-    {title:"Inventory Management System",cat:"Web Application",year:"2025\u20132026",c:["#10172A","#52E5FF"],shots:["images/javinciInventory/MinMax.png","images/javinciInventory/SummaryMutasiBarang.png","images/javinciInventory/BillOfMaterialMenu.png","images/javinciInventory/SPKProduksiMenu.png","images/javinciInventory/PrinttPDFPreview.png"],
-     desc:"Internal inventory system with Stock Min/Max reports, mutation summaries, Bill of Material and production orders.",stack:["JavaScript","AJAX","SQL"],
-     overview:"An internal web application for monitoring inventory, built at PT Javinci Berkat Kreatif Sentosa.",problem:"Faster inventory monitoring and better operational decisions.",role:"Web Application Developer: built the Stock Min/Max reports and inventory mutation summaries.",process:"[Add: requirements gathering, development and testing steps.]",features:["Stock Min/Max reports","Inventory mutation summaries","Bill of Material","SPK Produksi (production orders)","Printable PDF preview"],github:"",demo:""},
-    {title:"Quality Control Management",cat:"Web Application",year:"2025\u20132026",c:["#75FF9B","#386BFF"],shots:["images/javinciInventory/QualityControlmenu.png"],
-     desc:"QC modules for raw material inspection and tracking, with full CRUD.",stack:["JavaScript","AJAX","SQL"],
-     overview:"A web module for raw-material inspection and management, with PDF shipment receipt upload and validation.",problem:"Improve data accuracy and reporting efficiency in quality control.",role:"Web Application Developer: built the QC modules end to end.",process:"[Add: requirements gathering, development and testing steps.]",features:["Complete CRUD for raw material inspection","PDF shipment receipt upload and validation","Reporting"],github:"",demo:""},
-    {title:"Purchase Order Management",cat:"Web Application",year:"2025\u20132026",c:["#386BFF","#52E5FF"],shots:["images/javinciInventory/PurchaseOrderMenu.png"],
-     desc:"PO management integrated with goods receipt workflows and approvals.",stack:["JavaScript","AJAX","SQL"],
-     overview:"A purchase order system integrated with goods receipt workflows.",problem:"Reduce manual work in purchasing and receiving.",role:"Web Application Developer: developed and enhanced the PO module.",process:"[Add: requirements gathering, development and testing steps.]",features:["Approval workflow","Automated calculations","AJAX product autocomplete","Dynamic filtering"],github:"",demo:""},
-    {title:"UI/UX E-Commerce",cat:"UI/UX Design",year:"2023",c:["#386BFF","#B8FF3B"],shots:["images/Ecommerce/HomePage.png","images/Ecommerce/ecm4.png","images/Ecommerce/ecm5.png","images/Ecommerce/ecm6.png","images/Ecommerce/CartPage.png","images/Ecommerce/ecm7.png","images/Ecommerce/LoginPage.png"],
-     desc:"An e-commerce UI/UX design made in Figma for a Human Computer Interaction course.",stack:["Figma"],
-     overview:"BORCELLE is an e-commerce concept that focuses only on the UI/UX, designed in Figma for the Human Computer Interaction course. The screens cover login, home, categories, product detail, cart, checkout and payment.",problem:"This was a course project for Human Computer Interaction. The goal was to make an e-commerce project that focuses only on the UI/UX, using Figma.",role:"I contributed to creating all of the menus and pages in this project.",process:"I designed each page in Figma, from login/sign up and the home page to category, item detail, cart, checkout and payment.",features:["Login / Sign Up page","Home page with promos and products","Category selected page","Item selected page","Cart page","Checkout page","Payment page"],github:"",demo:""},
-    {title:"Rasa Nusantara",cat:"Website",year:"2024",c:["#75FF9B","#10172A"],shots:["images/RasaNusantara/HomePage.png","images/RasaNusantara/CategoryPage.png","images/RasaNusantara/FoodSelectionPage.png","images/RasaNusantara/FoodResepPage.png","images/RasaNusantara/FormDiskusiPage.png","images/RasaNusantara/ContactPage.png","images/RasaNusantara/LoginPage.png"],
+    {title:"Inventory Management System",cat:"Web Application",year:"2025\u20132026",c:["#10172A","#52E5FF"],shots:["images/javinciInventory/MinMax.webp","images/javinciInventory/SummaryMutasiBarang.webp","images/javinciInventory/BillOfMaterialMenu.webp","images/javinciInventory/SPKProduksiMenu.webp","images/javinciInventory/PrinttPDFPreview.webp"],
+     desc:"An internal inventory system with Stock Min/Max reports, inventory mutation summaries, Bill of Material management, and production orders.",stack:["JavaScript","AJAX","SQL"],
+     overview:"An internal web application for inventory monitoring, developed at PT Javinci Berkat Kreatif Sentosa.",problem:"The system was intended to speed up inventory monitoring and support better operational decisions.",role:"As a Web Application Developer, I developed Stock Min/Max reports, inventory mutation summaries, Bill of Material management, and production order workflows.",process:"I developed inventory management features, including Stock Min/Max reports, inventory mutation summaries, Bill of Material management and production order workflows.",features:["Stock Min/Max reports","Inventory mutation summaries","Bill of Material","SPK Produksi (production orders)","Printable PDF preview"],github:"",demo:""},
+    {title:"Quality Control Management",cat:"Web Application",year:"2025\u20132026",c:["#75FF9B","#386BFF"],shots:["images/javinciInventory/QualityControlmenu.webp"],
+     desc:"Quality control modules for raw material inspection and tracking, with full CRUD functionality.",stack:["JavaScript","AJAX","SQL"],
+     overview:"A web module for raw material inspection and management, including PDF shipment receipt upload and validation.",problem:"The module aimed to improve data accuracy and reporting efficiency in quality control.",role:"As a Web Application Developer, I developed the raw material quality control module with full CRUD functionality.",process:"I developed the raw material quality control module with full CRUD functionality, allowing users to create, view, update and manage inspection records.",features:["Complete CRUD for raw material inspection","PDF shipment receipt upload and validation","Reporting"],github:"",demo:""},
+    {title:"Purchase Order Management",cat:"Web Application",year:"2025\u20132026",c:["#386BFF","#52E5FF"],shots:["images/javinciInventory/PurchaseOrderMenu.webp"],
+     desc:"Purchase order management integrated with goods receipt workflows and approvals.",stack:["JavaScript","AJAX","SQL"],
+     overview:"A purchase order management system integrated with goods receipt workflows.",problem:"The project aimed to reduce manual work in purchasing and receiving.",role:"As a Web Application Developer, I developed and enhanced the purchase order management module.",process:"I developed the purchase order management module and integrated it with goods receipt workflows, document validation and approval processes.",features:["Approval workflow","Automated calculations","AJAX product autocomplete","Dynamic filtering"],github:"",demo:""},
+    {title:"UI/UX E-Commerce",cat:"UI/UX Design",year:"2023",c:["#386BFF","#B8FF3B"],shots:["images/Ecommerce/HomePage.webp","images/Ecommerce/ecm4.webp","images/Ecommerce/ecm5.webp","images/Ecommerce/ecm6.webp","images/Ecommerce/CartPage.webp","images/Ecommerce/ecm7.webp","images/Ecommerce/LoginPage.webp"],
+     desc:"An e-commerce UI/UX concept designed in Figma for a Human Computer Interaction course.",stack:["Figma"],
+     overview:"BORCELLE is an e-commerce concept designed in Figma for a Human Computer Interaction course. Its screens cover login, home, categories, product details, cart, checkout, and payment.",problem:"The course project focused on designing an e-commerce experience in Figma, with an emphasis on UI/UX.",role:"I contributed to creating the project's menus and pages.",process:"I designed the screens in Figma, covering login and sign-up, the home page, categories, item details, cart, checkout, and payment.",features:["Login / Sign Up page","Home page with promos and products","Category selected page","Item selected page","Cart page","Checkout page","Payment page"],github:"",demo:""},
+    {title:"Rasa Nusantara",cat:"Website",year:"2024",c:["#75FF9B","#10172A"],shots:["images/RasaNusantara/HomePage.webp","images/RasaNusantara/CategoryPage.webp","images/RasaNusantara/FoodSelectionPage.webp","images/RasaNusantara/FoodResepPage.webp","images/RasaNusantara/FormDiskusiPage.webp","images/RasaNusantara/ContactPage.webp","images/RasaNusantara/LoginPage.webp"],
      desc:"A food information website built with HTML and CSS for a Search Engine Optimization course.",stack:["HTML","CSS"],
-     overview:"RasaNusantara is a food information website about Indonesian cuisine, where visitors can find restaurants, culinary menus, recipes, cooking video tutorials and a discussion forum.",problem:"This was a course project for Search Engine Optimization (SEO). The goal was to make a website about food using only HTML and CSS.",role:"I contributed to creating all of the menus and pages in this project.",process:"I built each page using HTML and CSS only: login, home, restaurant list and details, culinary menu, recipes, forum and contact.",features:["Login page","Home with restaurant search","Restaurant list and detail pages","Culinary menu categories","Recipe pages","Video cooking tutorials","Forum","Contact page with map"],github:"",demo:""}],
+     overview:"RasaNusantara is a website about Indonesian cuisine where visitors can explore restaurants, culinary menus, recipes, cooking video tutorials, and a discussion forum.",problem:"The Search Engine Optimization course project focused on building a food-related website using HTML and CSS.",role:"I contributed to creating the site's menus and pages.",process:"I built the pages using HTML and CSS, covering login, the home page, restaurant listings and details, culinary menus, recipes, the forum, and contact.",features:["Login page","Home with restaurant search","Restaurant list and detail pages","Culinary menu categories","Recipe pages","Video cooking tutorials","Forum","Contact page with map"],github:"",demo:""}],
   experience:[
-    {org:"PT Javinci Berkat Kreatif Sentosa · Jakarta",title:"Web Application Developer",period:"Sep 2025 – Aug 2026",points:["Built and maintained internal apps for inventory, purchasing, quality control and reporting.","Developed Stock Min/Max reports, inventory mutation summaries and QC modules with full CRUD.","Implemented PDF shipment receipt upload and validation, and PO management with approval workflows.","Worked with cross-functional teams on requirements, testing and performance."]},
-    {org:"PT Javinci Berkat Kreatif Sentosa · Jakarta",title:"IT Support",period:"Sep 2025 – Aug 2026",points:["Resolved hardware, software and network issues for end-users.","Handled software installation, hardware configuration and system maintenance.","Managed IT service requests following IT Service Management practices."]},
-    {org:"Genius Bimbel · Tangerang",title:"Academic Tutor",period:"Oct 2024 – May 2025",points:["Guided about 10 students, mainly in Mathematics at elementary and junior high level.","Designed interactive learning materials and tracked progress through regular assessments."]}]
+    {org:"PT Javinci Berkat Kreatif Sentosa · Jakarta",title:"Web Application Developer",period:"September 2025 – August 2026 · Concurrent responsibilities",points:["Built and maintained internal applications for inventory, purchasing, quality control, and reporting.","Developed Stock Min/Max reports, inventory mutation summaries, and QC modules with full CRUD functionality.","Implemented PDF shipment receipt upload and validation, and developed purchase order management with approval workflows.","Collaborated with cross-functional teams on requirements, testing, and performance."]},
+    {org:"PT Javinci Berkat Kreatif Sentosa · Jakarta",title:"IT Support",period:"September 2025 – August 2026 · Concurrent responsibilities",points:["Resolved hardware, software, and network issues for end users.","Installed software, configured hardware, and maintained systems.","Managed IT service requests in line with IT service management practices."]},
+    {org:"Genius Bimbel · Tangerang",title:"Academic Tutor",period:"Oct 2024 – May 2025",points:["Guided approximately 10 elementary and junior high students, mainly in Mathematics.","Designed interactive learning materials and tracked student progress through regular assessments."]}]
 };
 /* ===== ENGINE ===== */
 CONFIG.projects.forEach(p=>{p.shots=p.shots||[];p.img=p.img||p.shots[0]||""});
@@ -315,32 +470,90 @@ $("#logo").textContent=CONFIG.logo;$("#avail").textContent=CONFIG.availability;$
 $("#yr").textContent=new Date().getFullYear();
 {let i=0;const mk=t=>t.split(" ").map(w=>`<span class="w">${[...w].map(c=>`<span class="c" style="--i:${i++}">${c}</span>`).join("")}</span>`).join(" ");$("#nm1").innerHTML=mk("KEVIN OCTAVIANUS");$("#nm2").innerHTML=mk("SANTOSO")}
 $("#mq1").innerHTML=CONFIG.skills.map(s=>`<span>${esc(s[0])} ✦</span>`).join("").repeat(2);
-$("#cards").innerHTML=CONFIG.cards.map(c=>`<button class="fc rv" aria-pressed="false" aria-label="${esc(c.t)}: tap to flip"><span class="in2"><span class="ft"><span class="h">${esc(c.t)}</span><span class="p">${esc(c.d)}</span><small>Tap to flip ↻</small></span><span class="bk"><span class="h">${esc(c.t)}</span><span class="p">${esc(c.m||"")}</span></span></span></button>`).join("");
-$$(".fc").forEach(b=>b.onclick=()=>b.setAttribute("aria-pressed",b.classList.toggle("on")));
+$("#cards").innerHTML=CONFIG.cards.map(c=>`<button type="button" class="fc rv" aria-pressed="false" aria-label="${esc(c.t)}: ${esc(c.d)}. Click to flip."><span class="in2"><span class="ft"><span class="fc-head"><span class="fc-badge">${esc(c.t)}</span><span class="fc-icon" aria-hidden="true">✦</span></span><span class="fc-body"><h3 class="fc-title">${esc(c.d)}</h3></span><span class="fc-foot"><span class="fc-cue">Lihat detail <i class="fc-arrow" aria-hidden="true">↻</i></span></span></span><span class="bk"><span class="fc-head"><span class="fc-badge fc-badge-back">${esc(c.t)} · Overview</span><span class="fc-flip-btn" aria-hidden="true">✕</span></span><span class="fc-body"><p class="fc-desc">${esc(c.m||c.d)}</p></span><span class="fc-foot"><span class="fc-cue fc-cue-back">Kembali <i class="fc-arrow" aria-hidden="true">↺</i></span></span></span></span></button>`).join("");
+$$(".fc").forEach(card=>{
+  card.addEventListener("click",()=>{
+    const wasFlipped=card.classList.contains("is-flipped");
+    if(wasFlipped){
+      card.classList.remove("is-flipped");
+      card.setAttribute("aria-pressed","false");
+      card.setAttribute("aria-label",card.querySelector(".fc-badge").textContent+": "+card.querySelector(".fc-title").textContent+". Activate to show details.");
+      card.classList.add("just-unflipped");
+    }else{
+      card.classList.add("is-flipped");
+      card.setAttribute("aria-pressed","true");
+      card.setAttribute("aria-label",card.querySelector(".fc-badge").textContent+": "+card.querySelector(".fc-desc").textContent+". Activate to show front.");
+      card.classList.remove("just-unflipped");
+    }
+  });
+  card.addEventListener("mouseleave",()=>{
+    card.classList.remove("just-unflipped");
+  });
+});
 const CAT={PHP:"Languages",Python:"Languages",JavaScript:"Languages",SQL:"Languages",HTML:"Web",CSS:"Web",Bootstrap:"Web",jQuery:"Web",AJAX:"Web",MySQL:"Databases","SQL Server":"Databases",PostgreSQL:"Databases","Git & GitHub":"Tools","IT Support":"IT Support","UI/UX":"Design"};
 const USED={AJAX:"Dynamic filtering and product autocomplete in the PO module.","IT Support":"End-user support plus hardware, software and network troubleshooting.",SQL:"Data management and reporting in internal systems."};
 $("#chips").innerHTML=CONFIG.skills.map(s=>`<button class="chip rv" aria-pressed="false" data-n="${esc(s[0])}" data-c="${esc(CAT[s[0]]||"Other")}" data-d="${esc(s[1])}">${esc(s[0])}</button>`).join("");
-const tip=$("#tip"),show=b=>{const n=b.dataset.n;tip.innerHTML=`<span class="tn">${esc(n)}</span><span class="tc">${esc(b.dataset.c)}</span><br>${esc(b.dataset.d)}${USED[n]?`<br><b>Used for:</b> ${esc(USED[n])}`:""}`;tip.classList.remove("pop");void tip.offsetWidth;tip.classList.add("pop")};
+const tip=$("#tip"),show=b=>{if(!b)return;const n=b.dataset.n;tip.innerHTML=`<div><span class="tn">${esc(n)}</span><span class="tc">${esc(b.dataset.c)}</span></div><div class="td">${esc(b.dataset.d)}</div>${USED[n]?`<div class="tu"><b>Production usage:</b> ${esc(USED[n])}</div>`:""}`;tip.classList.remove("pop");void tip.offsetWidth;tip.classList.add("pop")};
 $$(".chip").forEach(b=>{b.onmouseenter=()=>show(b);b.onfocus=()=>show(b);b.onclick=()=>{$$(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));show(b)}});
+const firstChip=$(".chip");if(firstChip){firstChip.setAttribute("aria-pressed","true");show(firstChip)}
 const cats=["All",...new Set(CONFIG.skills.map(s=>CAT[s[0]]||"Other"))];
 $("#filt").innerHTML=cats.map((c,i)=>`<button class="fb" aria-pressed="${i===0}">${esc(c)}</button>`).join("");
-$$(".fb").forEach(f=>f.onclick=()=>{$$(".fb").forEach(x=>x.setAttribute("aria-pressed",x===f));$$(".chip").forEach(c=>c.classList.toggle("off",f.textContent!=="All"&&c.dataset.c!==f.textContent))});
+$$(".fb").forEach(f=>f.onclick=()=>{
+  $$(".fb").forEach(x=>x.setAttribute("aria-pressed",x===f));
+  let visibleFirst=null;
+  $$(".chip").forEach(c=>{
+    const hide=f.textContent!=="All"&&c.dataset.c!==f.textContent;
+    c.classList.toggle("off",hide);
+    c.hidden=hide;
+    if(!hide&&!visibleFirst) visibleFirst=c;
+  });
+  const currentSel=$(".chip[aria-pressed=true]:not(.off)");
+  if(!currentSel&&visibleFirst){
+    $$(".chip").forEach(x=>x.setAttribute("aria-pressed",x===visibleFirst));
+    show(visibleFirst);
+  }
+});
 $("#tl").innerHTML=CONFIG.experience.map(x=>`<article class="rv"><small>${esc(x.period)}</small><h3>${esc(x.title)}</h3><b>${esc(x.org)}</b><ul>${x.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></article>`).join("");
 const real=u=>u&&u.trim();
-$("#links").innerHTML=`<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=${encodeURIComponent(CONFIG.email)}" target="_blank" rel="noopener">Email ↗</a><p style="margin:6px 0 18px;font-weight:500">${esc(CONFIG.email)}</p>`+CONFIG.socials.filter(s=>real(s.url)).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join("");
-const art=p=>p.img?`<img src="${esc(p.img)}" alt="${esc(p.title)} cover" loading="lazy">`:`<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="225" fill="${p.c[0]}"/><circle cx="300" cy="70" r="80" fill="${p.c[1]}"/><path d="M0 225 120 110l90 115z" fill="${p.c[1]}" opacity=".7"/><rect x="40" y="30" width="110" height="14" rx="7" fill="#fff" opacity=".8"/></svg>`;
-const ph=p=>p.img?"":`<span class="ph">Cover placeholder</span>`;
+$("#links").innerHTML=`<a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=${encodeURIComponent(CONFIG.email)}" target="_blank" rel="noopener noreferrer">Open Gmail ↗</a><div class="email-row"><p>${esc(CONFIG.email)}</p><button class="copy-email" type="button">Copy email</button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>`+CONFIG.socials.filter(s=>real(s.url)).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a>`).join("");
+const copyButton=$(".copy-email"),copyStatus=$("#copy-status");let copyResetTimer;
+const legacyCopy=value=>{const field=document.createElement("textarea");field.value=value;field.setAttribute("readonly","");field.style.cssText="position:fixed;left:-9999px;top:0;opacity:0";document.body.append(field);field.select();let ok=false;try{ok=document.execCommand("copy")}catch{}field.remove();return ok};
+copyButton.addEventListener("click",async()=>{let copied=false;try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(CONFIG.email);copied=true}}catch{}if(!copied)copied=legacyCopy(CONFIG.email);copyStatus.textContent=copied?"Email copied!":"Clipboard unavailable. Select the address above to copy it.";copyStatus.dataset.state=copied?"success":"error";copyButton.textContent=copied?"Copied!":"Copy email";clearTimeout(copyResetTimer);copyResetTimer=setTimeout(()=>{copyStatus.textContent="";copyStatus.removeAttribute("data-state");copyButton.textContent="Copy email"},2400)});
+const art=p=>p.img?`<img src="${esc(p.img)}" alt="${esc(p.title)} cover" loading="lazy" decoding="async">`:`<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="225" fill="${p.c[0]}"/><circle cx="300" cy="70" r="80" fill="${p.c[1]}"/><path d="M0 225 120 110l90 115z" fill="${p.c[1]}" opacity=".7"/><rect x="40" y="30" width="110" height="14" rx="7" fill="#fff" opacity=".8"/></svg>`;
+const ph=p=>p.img?"":`<span class="ph">Project preview unavailable</span>`;
 const tags=p=>`<ul class="tags">${p.stack.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`;
 $("#grid").innerHTML=CONFIG.projects.map((p,i)=>`<button class="proj rv" data-i="${i}" aria-label="Open case study: ${esc(p.title)}"><div class="cover">${art(p)}${ph(p)}</div><div class="pbody"><div class="meta"><span>${esc(p.cat)}</span><span>${esc(p.year)}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>${tags(p)}<span class="cta">View case study →</span></div></button>`).join("");
-{const P=[[4,2],[3,3],[2,4]],ps=$$(".proj");let i=0,r=0;while(i<ps.length){const sp=ps.length-i>=2?P[r%3]:[6];sp.forEach((c,k)=>{ps[i+k].style.setProperty("--s",c);ps[i+k].classList.toggle("narrow",c===2)});i+=sp.length;r++}}
+const projectCards=$$(".proj"),projectFilterGroup=$("#project-filters"),projectCount=$("#project-count"),enterTimers=new WeakMap();
+const projectCategories=["All",...new Set(CONFIG.projects.map(p=>p.cat))];
+projectFilterGroup.innerHTML=projectCategories.map((category,i)=>`<button class="project-filter" type="button" data-category="${esc(category)}" aria-pressed="${i===0}">${esc(category)}</button>`).join("");
+const applyProjectFilter=category=>{
+  let visible=0;
+  projectCards.forEach(card=>{
+    const project=CONFIG.projects[Number(card.dataset.i)],matches=category==="All"||project.cat===category;
+    if(!matches){card.hidden=true;card.classList.remove("filter-enter");clearTimeout(enterTimers.get(card));return}
+    visible++;
+    if(card.hidden){card.hidden=false;card.classList.remove("filter-enter");void card.offsetWidth;card.classList.add("filter-enter");clearTimeout(enterTimers.get(card));enterTimers.set(card,setTimeout(()=>card.classList.remove("filter-enter"),280))}
+  });
+  projectCount.textContent=category==="All"?`Showing all ${visible} projects`:`Showing ${visible} ${category} ${visible===1?"project":"projects"}`;
+};
+$$(".project-filter",projectFilterGroup).forEach(button=>button.addEventListener("click",()=>{
+  $$(".project-filter",projectFilterGroup).forEach(item=>item.setAttribute("aria-pressed",String(item===button)));
+  applyProjectFilter(button.dataset.category);
+}));
+applyProjectFilter("All");
 const dlg=$("#dlg");
+const lb=$("#lb"),lbImage=$("#lb img"),lbCount=$("#lb-count"),lbPrev=$("#lb-prev"),lbNext=$("#lb-next");let previewButtons=[],previewIndex=0;
+const renderPreview=()=>{const button=previewButtons[previewIndex];if(!button)return;lbImage.src=button.dataset.s;lbImage.alt=$("img",button).alt;lbCount.textContent=`${previewIndex+1} / ${previewButtons.length}`;lbPrev.disabled=lbNext.disabled=previewButtons.length<2};
+const movePreview=step=>{if(previewButtons.length<2)return;previewIndex=(previewIndex+step+previewButtons.length)%previewButtons.length;renderPreview()};
+lbPrev.onclick=()=>movePreview(-1);lbNext.onclick=()=>movePreview(1);
 const link=(u,t)=>real(u)?`<a class="btn" href="${esc(u)}" target="_blank" rel="noopener">${t}</a>`:"";
+const detail=(title,content,wide=false,kind="")=>`<section class="cs-section${wide?" wide":""}${kind?` ${kind}`:""}"><h3>${title}</h3>${content}</section>`;
 $$(".proj").forEach(b=>b.onclick=()=>{const p=CONFIG.projects[b.dataset.i];
-dlg.innerHTML=`<div class="cs"><button class="close" aria-label="Close">Close ✕</button><div class="meta" style="color:#386BFF"><span>${esc(p.cat)}</span><span>${esc(p.year)}</span></div><h2>${esc(p.title)}</h2><div class="cover">${art(p)}${ph(p)}</div><h3>Overview</h3><p>${esc(p.overview)}</p><h3>Problem &amp; objectives</h3><p>${esc(p.problem)}</p><h3>My role</h3><p>${esc(p.role)}</p><h3>Process</h3><p>${esc(p.process)}</p><h3>Technologies</h3>${tags(p)}${p.shots.length?`<h3>Screenshots</h3><div class="shots">${p.shots.map((u,i)=>`<button class="shot" data-s="${esc(u)}" aria-label="Enlarge screenshot ${i+1} of ${esc(p.title)}"><img src="${esc(u)}" alt="${esc(p.title)} screenshot ${i+1}" loading="lazy"></button>`).join("")}</div>`:""}<h3>Key features</h3><ul>${p.features.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>${p.github||p.demo?`<h3>Links</h3>${link(p.github,"GitHub")}${link(p.demo,"Live demo")}`:""}</div>`;
-dlg.showModal();dlg.scrollTop=0;$(".close",dlg).onclick=()=>dlg.close();$$(".shot",dlg).forEach(x=>x.onclick=()=>{const im=$("#lb img");im.src=x.dataset.s;im.alt=$("img",x).alt;$("#lb").showModal()})});
-$("#lb").onclick=e=>{if(e.target.tagName!=="BUTTON")e.currentTarget.close()};
+dlg.innerHTML=`<div class="cs"><header class="cs-head"><div class="cs-head-main"><p class="cs-eyebrow"><span>${esc(p.cat)}</span><span>${esc(p.year)}</span></p><h2 id="cs-title">${esc(p.title)}</h2><p class="cs-summary">${esc(p.desc)}</p></div><button class="close" type="button" aria-label="Close case study">Close ✕</button></header><div class="cs-cover">${art(p)}${ph(p)}</div><div class="cs-grid">${detail("Overview",`<p>${esc(p.overview)}</p>`)}${detail("Problem &amp; objectives",`<p>${esc(p.problem)}</p>`)}${detail("My role",`<p>${esc(p.role)}</p>`)}${detail("Process",`<p>${esc(p.process)}</p>`)}${detail("Technologies",tags(p),true,"tech-section")}${p.shots.length?detail("Screenshots",`<div class="shots">${p.shots.map((u,i)=>`<button class="shot" type="button" data-s="${esc(u)}" aria-label="Enlarge screenshot ${i+1} of ${esc(p.title)}"><img src="${esc(u)}" alt="${esc(p.title)} screenshot ${i+1}" loading="lazy" decoding="async"></button>`).join("")}</div>`,true,"gallery-section"):""}${detail("Key features",`<ul>${p.features.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>`,true)}${p.github||p.demo?detail("Project links",`${link(p.github,"GitHub")}${link(p.demo,"Live demo")}`,true):""}</div></div>`;
+dlg.setAttribute("aria-labelledby","cs-title");dlg.showModal();dlg.scrollTop=0;$(".close",dlg).onclick=()=>dlg.close();const shots=$$(".shot",dlg);shots.forEach((button,index)=>button.onclick=()=>{previewButtons=shots;previewIndex=index;renderPreview();lb.showModal()})});
+$(".close",lb).onclick=()=>lb.close();lb.onclick=e=>{if(e.target===lb)lb.close()};
 dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
-if(fine&&!calm)$$(".proj").forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`};c.onmouseleave=()=>c.style.transform=""});
+if(fine&&!calm)$$(".proj").forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*4}deg) rotateX(${-y*4}deg)`};c.onmouseleave=()=>c.style.transform=""});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
 $$(".rv").forEach(e=>io.observe(e));
 const showVisible=()=>$$(".rv:not(.in)").forEach(e=>{const r=e.getBoundingClientRect();if(r.top<innerHeight*.92&&r.bottom>0){e.classList.add("in");io.unobserve(e)}});
@@ -348,8 +561,22 @@ addEventListener("scroll",showVisible,{passive:true});addEventListener("load",sh
 const links=$$("nav a.l"),so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>{const on=a.getAttribute("href")==="#"+e.target.id;a.classList.toggle("on",on);on?a.setAttribute("aria-current","true"):a.removeAttribute("aria-current")})}),{rootMargin:"-45% 0px -50% 0px"});
 $$("main section").forEach(s=>so.observe(s));
 const burger=$(".burger"),menu=$("#menu");
-burger.onclick=()=>{const o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o)};
-links.forEach(a=>a.addEventListener("click",()=>{menu.classList.remove("open");burger.setAttribute("aria-expanded",false)}));
+const mobileNav=matchMedia("(max-width:760px)");
+const setMenuOpen=(open,restoreFocus=false)=>{
+  menu.classList.toggle("open",open);
+  burger.setAttribute("aria-expanded",String(open));
+  burger.textContent=open?"Close ✕":"Menu";
+  const hidden=mobileNav.matches&&!open;
+  menu.inert=hidden;
+  menu.setAttribute("aria-hidden",String(hidden));
+  if(restoreFocus&&!open)burger.focus();
+};
+setMenuOpen(false);
+burger.onclick=()=>setMenuOpen(!menu.classList.contains("open"));
+links.forEach(a=>a.addEventListener("click",()=>setMenuOpen(false,mobileNav.matches)));
+document.addEventListener("click",e=>{if(menu.classList.contains("open")&&!menu.contains(e.target)&&!burger.contains(e.target)){const focusWasInside=menu.contains(document.activeElement);setMenuOpen(false,focusWasInside)}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&menu.classList.contains("open")){setMenuOpen(false,true)}});
+mobileNav.addEventListener("change",()=>{const focusWasInside=menu.contains(document.activeElement);setMenuOpen(false,mobileNav.matches&&focusWasInside);if(focusWasInside&&!mobileNav.matches)links[0].focus()});
 const SVG=`<svg viewBox="0 0 200 200" aria-hidden="true"><path d="M100 14c52 0 86 38 86 90 0 40-30 82-86 82S14 144 14 104C14 52 48 14 100 14Z" fill="#75FF9B" stroke="#111" stroke-width="6"/><path d="M60 14 50-8M140 14l10-22" stroke="#111" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="-12" r="8" fill="#386BFF" stroke="#111" stroke-width="4"/><circle cx="150" cy="-12" r="8" fill="#386BFF" stroke="#111" stroke-width="4"/><circle cx="70" cy="90" r="26" fill="#fff" stroke="#111" stroke-width="5"/><circle class="pu" cx="70" cy="90" r="11" fill="#111"/><circle cx="132" cy="90" r="26" fill="#fff" stroke="#111" stroke-width="5"/><circle class="pu" cx="132" cy="90" r="11" fill="#111"/><path d="M72 138q30 26 60 0" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round"/></svg>`;
 $$("[data-mascot]").forEach(m=>{m.insertAdjacentHTML("afterbegin",SVG);const lines=["Hi there!","Check the projects!","Let’s build!","Boop!"];let n=0;
 m.onclick=()=>{m.classList.remove("jump");void m.offsetWidth;m.classList.add("jump");$(".bubble",m).textContent=lines[n++%lines.length];m.classList.add("say");setTimeout(()=>m.classList.remove("say"),1800)}});
@@ -361,10 +588,9 @@ addEventListener("pointermove",e=>{
 },{passive:true});
 $$("a,button").forEach(e=>{e.addEventListener("mouseenter",()=>{cur.style.width=cur.style.height="56px"});e.addEventListener("mouseleave",()=>{cur.style.width=cur.style.height="34px"})});
 if(fine&&!calm)$$(".mag").forEach(b=>{b.onmousemove=e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`};b.onmouseleave=()=>b.style.transform=""});
-/* About illustration */
-{const w=$(".mewrap"),f=$("#me"),b=$(".meb"),L=["Hi! Click me","Good things take time","Code. Design. Build. Improve.","Let’s build something cool!"];let k=0;
-b.onclick=()=>{k=(k+1)%L.length;b.textContent=L[k]};
-if(fine&&!calm){f.onmousemove=e=>{const r=f.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;w.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg)`};f.onmouseleave=()=>w.style.transform=""}}
+/* About illustration tilt */
+{const w=$(".mewrap"),f=$("#me");
+if(w&&f&&fine&&!calm){f.onmousemove=e=>{const r=f.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;w.style.transform=`perspective(800px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`};f.onmouseleave=()=>w.style.transform=""}}
 /* Scroll animations */
 const bar=document.createElement("div");bar.id="bar";document.body.append(bar);
 $$(".rv").forEach(e=>{const i=[...e.parentNode.children].indexOf(e);e.style.transitionDelay=(i%4)*.1+"s";e.addEventListener("transitionend",()=>e.style.transitionDelay="",{once:true})});
@@ -376,15 +602,19 @@ const upd=()=>{tick=false;const y=scrollY,H=innerHeight;
  covers.forEach(c=>{const r=c.parentNode.getBoundingClientRect();if(r.bottom<0||r.top>H)return;c.style.translate=`0 ${(r.top+r.height/2-H/2)*-.06}px`});
  const t=tl.getBoundingClientRect();tl.style.setProperty("--tp",Math.min(100,Math.max(0,(H*.6-t.top)/t.height*100))+"%")};
 addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd()}
-/* Form opens the visitor's email app; no fake success message */
-$("#form").onsubmit=e=>{e.preventDefault();const f=e.target,m=$("#fmsg");
- if(!f.name.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value)||!f.message.value.trim()){m.textContent="Please fill in name, a valid email and a message.";m.style.color="#FFB4B4";return}
- if(CONFIG.email.includes("example.com")){m.textContent="Set your real email in CONFIG.email first.";m.style.color="#FFB4B4";return}
- const su=encodeURIComponent("Portfolio message from "+f.name.value),bd=encodeURIComponent(f.message.value+"\n\n— "+f.name.value+" ("+f.email.value+")"),to=encodeURIComponent(CONFIG.email);
+/* Contact form validates locally and prepares a draft; sending remains the visitor's action. */
+const form=$("#form"),formFields=[$("[name=name]",form),$("[name=email]",form),$("[name=message]",form)];
+const isFieldValid=field=>{const value=field.value.trim();if(!value)return false;if(field.name!=="email")return true;const probe=document.createElement("input");probe.type="email";probe.value=value;return probe.checkValidity()};
+const updateFieldValidity=field=>{const valid=isFieldValid(field);field.setAttribute("aria-invalid",String(!valid));return valid};
+formFields.forEach(field=>field.addEventListener("input",()=>{if(!form.classList.contains("was-validated"))return;updateFieldValidity(field);if(formFields.every(isFieldValid)){const msg=$("#fmsg");msg.textContent="";msg.removeAttribute("data-state")}}));
+form.onsubmit=e=>{e.preventDefault();const m=$("#fmsg");form.classList.add("was-validated");const valid=formFields.map(updateFieldValidity),firstInvalid=formFields[valid.indexOf(false)];
+ if(firstInvalid){m.textContent="Check the highlighted fields: enter your name, a valid email, and a message.";m.dataset.state="error";firstInvalid.focus();return}
+ const [nameField,emailField,messageField]=formFields,name=nameField.value.trim(),email=emailField.value.trim(),message=messageField.value.trim();
+ const su=encodeURIComponent("Portfolio message from "+name),bd=encodeURIComponent(message+"\n\n— "+name+" ("+email+")"),to=encodeURIComponent(CONFIG.email);
  const g="https://mail.google.com/mail/?view=cm&fs=1&to="+to+"&su="+su+"&body="+bd,mt="mailto:"+CONFIG.email+"?subject="+su+"&body="+bd;
- const w=window.open(g,"_blank");if(w)w.opener=null;
- m.style.color="var(--lime)";m.textContent="Gmail should open in a new tab with your message ready. Press Send there to deliver it. If nothing opened:";
- [["Open Gmail",g,"_blank"],["Use my email app",mt,"_self"]].forEach(([t,h,tg])=>{const a=document.createElement("a");a.textContent=t;a.href=h;a.target=tg;a.rel="noopener";a.style.cssText="color:#fff;margin-left:10px;text-decoration:underline";m.append(a)})};
+ let opened=null;try{opened=window.open(g,"_blank");if(opened)opened.opener=null}catch{}
+ m.replaceChildren();m.dataset.state="info";m.append(document.createTextNode(opened?"Gmail draft opened. Review it and press Send; this form has not sent your message.":"Gmail could not be opened. Your message has not been sent. Use a fallback:"));
+ [["Open Gmail",g,"_blank"],["Use your email app",mt,"_self"]].forEach(([label,href,target])=>{const a=document.createElement("a");a.textContent=label;a.href=href;a.target=target;a.rel="noopener noreferrer";m.append(a)})};
 </script>
 </body>
 </html>
